@@ -15,14 +15,14 @@
 
 ## 사용한 라이브러리
 
-Beautiful Soup
-Selenium
+ - Beautiful Soup
+ - Selenium
 
-NLTK
-Scikit-learn
-Keras
+ - NLTK
+ - Scikit-learn
+ - Keras
 
-Matplotlib
-Seaborn
-Bokeh
-Django
+ - Matplotlib
+ - Seaborn
+ - Bokeh
+ - Django
