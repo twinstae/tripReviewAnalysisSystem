@@ -12,3 +12,17 @@
 그 과정에서 수집, 전처리, 머신러닝, 시각화까지 다양한 역량을 단련하고
 기술적으로도 다양한 방법과 통찰을 개발하여
 데이터 분석을 배우고, 실천하는 분들이 참고할 수 있는 좋은 선례를 만들 것.
+
+## 사용한 라이브러리
+
+Beautiful Soup
+Selenium
+
+NLTK
+Scikit-learn
+Keras
+
+Matplotlib
+Seaborn
+Bokeh
+Django
