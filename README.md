@@ -14,14 +14,11 @@
 데이터 분석을 배우고, 실천하는 분들이 참고할 수 있는 좋은 선례를 만들 것.  
 
 ## 사용한 라이브러리
-
  - Beautiful Soup
  - Selenium
-
  - NLTK
  - Scikit-learn
  - Keras
-
  - Matplotlib
  - Seaborn
  - Bokeh
