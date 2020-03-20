@@ -17,6 +17,7 @@
  - Beautiful Soup
  - Selenium
  - NLTK
+ - Genism
  - Scikit-learn
  - Keras
  - Matplotlib
