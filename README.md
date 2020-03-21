@@ -23,4 +23,5 @@
  - Matplotlib
  - Seaborn
  - Bokeh
+ - WordCloud
  - Django
