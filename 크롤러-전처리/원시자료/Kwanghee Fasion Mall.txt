@@ -1,4 +1,4 @@
 ,star_point,title,text,Date of experience
-0,5.0,Very reasonably priced goods,"Leather and fur section is on the 6th floor. The jackets and coats sold there are reasonable and of good quality. Depending on the leather/fur quality and design, price range for Mutton coats is 650,000won and up, leather jackets 280,000won and up, gloves 35,000won and up. Since", November 2017
+0,5.0,Very reasonably priced goods,, November 2017
 1,4.0,wholesale market,wholesale market for clothes... you will get discount if you buy in quantity... open till late night... close to mall shopping places... so worth a visit for shopaholic., April 2017
-2,4.0,Leather jackets,I had such high hopes for this place as I had been looking for a leather jacket.   Firstly we got here at the wrong time. The mall doesnt open until 8pm. The leathersm items are in the top level. Although there were quite a few styles I couldnt find the right one for me. Prices, August 2016
+2,4.0,Leather jackets,, August 2016
