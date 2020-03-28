@@ -4,8 +4,8 @@ from django.db import models
 
 class Attraction(models.Model):
     name = models.CharField(max_length=100)
-    large_category = models.CharField(max_length=30)
-    specific_category = models.CharField(max_length=30)
+    big_sort = models.CharField(max_length=30)
+    small_sort = models.CharField(max_length=30)
     address = models.CharField(max_length=100)
     
     def __str__(self):
