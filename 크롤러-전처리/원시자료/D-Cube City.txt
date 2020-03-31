@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,4.0,Modern Shopping Centre ,"Connected to a busy subway. lots of eatery, a supermarket and fashion shops. There is a Art centre too.", October 2019
-1,5.0,I was very pleased in this facility.,"Very nicely situated shopping mall having Sheraton hotel. I stayed in the hotel for few days to spend family vacation. It has many choices of food and shopping. Just across the road, variety of Korean foods and drinks are available. Subway green-line is available just few steps away. Very convenient.", October 2018
-2,4.0,A wet day at the cube,"A wonderful two hours with friends from Dublin on a wet autumn day. Our third visit, their first. A unique experience - quirky, interesting, fun. A must is a visit to the toilets. $12 entrance included wine tasting on the top floor with views over the vineyards. Friendly,knowledgable staff", May 2019
-3,5.0,Extraordinary experience ,Very modern and trendy with lots of shops and fantastic food court with live cooking. We chose the running sushi and it was great!, March 2019
-4,4.0,Bit of everything,"I would say this place has the best shopping in Seoul. With HnM, Stradivarius, Zara and more. There's not too much in the way of men's fashion here though. NBot too many choices as far as dining goes, sadly, but there's enough. n", July 2018

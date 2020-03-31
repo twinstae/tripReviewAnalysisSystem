@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,Kimchi the best,Very nice place to explain history of traditional Korean cuisine I would never believe before how many kimchi kind of combination existing in Korea. If you like it try to find time and visit it, September 2019
-1,5.0,Underrated and fun experience,, November 2019
-2,5.0,A must while visiting Insadong!,"If you're a kimchi fan or if you'd like to learn more about Korea's heritage. stop at this quaint museum. A better visit would've been taking a kimchi cooking class. Insadong has so many great shops, boutiques & snack vendors.", June 2019
-3,3.0,Planning ahead would make it more interesting,, July 2019
-4,2.0,Not what we expected,, April 2019

@@ -1,3 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,Wonderful forest park. Not necessarily to come for tourists.,, June 2019
-1,5.0,Yangjae Citizens Forest Park - romantic fall retreat for couples,, November 2018

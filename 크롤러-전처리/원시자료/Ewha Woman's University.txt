@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,4.0,Good mix of old and new architecture,"Interesting Campus with a mixture of buildings, nice to walk around.  Close to Bongwa temple and the area of EWAH is fun and interesting to explore.", February 2020
-1,2.0,Don't come here,It's disappointing because it's closed for tourists because of corona virus pandemic. Come when corona virus ia gone, February 2020
-2,4.0,Must visit!,Very historical university. Beautiful campus with a mixture of historical and modern architecture. Visited during winter and the campus outlook would be good for photography enthusiasts, January 2020
-3,3.0,Spot for Photo opp and for shops,, December 2019
-4,4.0,Iconic university ,The university is impressive. Physically and academically. But many people come here for the shopping. Less crowded then Myeondong but probably same price. The problem as in most Korean shops is that they do not display price and you have to ask for it and become suspicious that the price is not fixed., September 2019

@@ -1,8 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,Stunning vista from a hidden gem,"An easy, 30-minute hike up this mountain -- a hill really -- brings you to a simple park with a colorful pavilion from where you can enjoy a magnificant view of the Han River and the southern side of Seoul. It's worth taking a trek up the hill during both a clear day and night,", September 2018
-1,4.0,Wonderful rocky mountain in the middle of Seoul,, September 2018
-2,4.0,Found out about it as it is a Kdrama location,Visited during the day and it was not too challenging a climb from the subway station. Nice views of the river and bridges though during the day the not very scenic industrial parts are evident too. There is a nice pavilion at the top and quite a few people out for morning exercise!, June 2018
-3,5.0,A place to zone out. ♡,, October 2016
-4,5.0,Gorgeous night view,"We were so lucky our Seoul guide took us here.  He called it a secret spot.  We didn't know where we were heading to as we walked up the hill in the dark.  Then there it was through the trees, the view of the city with lights emerged.  On top of the hill there is a pavilion with a deck and exercise equipments.   We can see Han river and Seoul Forest.  It was definitely the highlight of the trip.", July 2016
-5,4.0,360 Wide view,"About 800 m. from Eungbong Station, Slope way but easy to walk. when you go on March, on the way have full Cherry blossom so awesome! If you go on May, there have full grass flowers. n the top you can see around Seoul town view.", April 2016
-6,4.0,Great for a short stroll,This is a great place for a walk or bike in central Seoul. It's similar to Namsan but less touristy and with better views. Especially good in spring when the flowers are blooming!, March 2016

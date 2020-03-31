@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,4.0,Beef and seafood,, January 2020
-1,4.0,Very Good Price for Seafood and Not Touristy ,, July 2019
-2,5.0,"discover, enjoy and taste the freshness of garak fishmarket","discover, enjoy and taste the freshness of garak fishmarket; u will see nearly all types of sea foods from live pufferfish to dried flying fish; clean, busy and absolut the trip worth from seoul city center (jongnu) or gangnam - easiest to reach by orange metro line number 3 till garak market station. Enclosed u will also find meat and veggie market :)", March 2019
-3,4.0,A very clean seafood market ,, October 2018
-4,5.0,Garak fish market,"Walking 1.5 km’s from hotel arrived initially at fruit market and a little further we came upon dried food market , fresh messy and then the fish market walked around for some 15 minutes and purchased some fish and still shelled  muscles etc. quality of food good as majority of fish slice and/or fresh. You can purchase these and then go upstairs and have them cooked.  Relatively cheaper than outside and you can see the fish prior to purchasing.  We arrived around 5.15pm on a Monday and it was relatively quiet", November 2018

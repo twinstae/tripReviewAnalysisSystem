@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,4.0,High-End Mall,, December 2019
-1,5.0,Rodeo Drive in a mall!!!,"This mall is for high rollers. It has, just to name a few, Prada, Tiffany, Hermes, Fendi, and Christian Dior. It is so fun to visit, the 1st floor is a grocery store. The pastries and baked goods are amazing. There are also restaurants down there! Visit even if you don't spend any money!", October 2019
-2,5.0,Amazing department store ,This store is amazing when you get inside there is like you enter in other world 🌍. Everything looks so good 😊 May be a little expensive., September 2019
-3,5.0,Great Department Store and Food Court!!,Great department store with local and international items.  Duty free occupies the top few floors with a lot of choices.  The supermarket has high quality products and the food court selection is fantastic!! Definitely get in line for the fried chicken (boneless)., April 2019
-4,1.0,My Thai Review,I ordered beef rice noodle(pho) and shrimp fried rice. It was such a terrible experience. Both food were blend especially the noodle. The fried rice had no seasoning. I will never go back., September 2018

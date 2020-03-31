@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,I love this place!,"If I ever return to Seoul, I will spend more than 1 day shopping here. It has variety and prices are very competitive.", December 2019
-1,1.0,Mr,Not family friendly at their restaurants. Ate at the Seoul pork cutlet at the mall. Squeezed 7 into table of 4. Almost dropped my plates due to lack of space., December 2019
-2,4.0,Great shopping,, November 2019
-3,5.0,Amazing brand names at great prices at this bustling train station,Lotte Outlets Seoul Station provides visitors with a solid assortment of brand names at great prices., September 2019
-4,3.0,Normal shopping center,Normal large store by Seoul main train station. Divide over 3 floors it has plenty of options of male and female clothing., September 2019

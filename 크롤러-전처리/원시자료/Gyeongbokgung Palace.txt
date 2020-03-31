@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,Nice park to relax and enjoy the spring sun,Very accessible from my hotel. Nice to see the week end families enjoying activities. Good atmosphere and plenty of space to rest. Perfect place for fresh air and walk around small lake. Enjoy, March 2020
-1,4.0,A palace with rich history,The palace is one of the most iconic heritage site in korea. Usually quite crowded but you can surely find some corner to take your perfect photo of the magnificent architecture and charming landscape. There are a lot of people in the traditional korean hanbok and it's a great, January 2020
-2,5.0,"Fantastic area, don t miss","I had the chance to visit the site after a business meeting nearby, this is very impressive and gives an idea about history of Korea", December 2019
-3,4.0,Pretend you're in a period K-drama,"Rent a hanbok and soak in the ancient Joseon vibes of the palace. Plus, entrance is free if you wear their traditional costume. Place was crowded though so no way you can grab any photos without a photo-bomber. Grounds can be covered in 2 to 3 hours depending on how interested", October 2019
-4,4.0,Love to See and Feel the History,Walking around the palace is a unique experience. It’s quite an experience to see how the Korean dynasties lived their lives. Great picture taking here., February 2020

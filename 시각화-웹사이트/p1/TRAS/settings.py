@@ -83,7 +83,7 @@ DATABASES = {
         'HOST': 'tras-mysql.cdrw2ozv6kaw.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
         'OPTION':{
-            'init_command' : "SET sql_mode='STRICT_TRANS_TABLES"
+            'init_command' : "SET sql_mode='STRICT_TRANS_TABLES,character_set_connection=utf8,collation_connection=utf8_unicode_ci"
         }
     }
 }

@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,Warm delicious food on a cold night,"I love the array of food here. Warm, filling, satisfying. There is one lady selling octopus at the very end of the market (south area i think) is so nice to us. She should earn a credit", November 2019
-1,4.0,Interesting Korean Traditional Marketplace,, November 2019
-2,5.0,A huge local market with much fun,, October 2019
-3,4.0,Nice to visit a local market aimed at residents rather than tourists ,, May 2019
-4,4.0,Enjoy this traditional market so much !! Street food time !!,, April 2019

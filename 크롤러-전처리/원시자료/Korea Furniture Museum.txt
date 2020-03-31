@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,A Seoul Highlight,This was my favourite thing in Seoul. Going here was a truly unique experience. Exquisite grounds and furniture and great guides., December 2019
-1,5.0,Fantastic tour with great furniture and traditional architecture,, November 2019
-2,5.0,Wonderful,Such a delightful visit. You must reserve in advance. Worth finding. Peaceful beautiful with excellent relaxed and informative tour. The view and going inside the buildings are brilliant, April 2019
-3,5.0,Exclusive and Unique,"We attended the English tour, with a baby....that was a mistake. Really should be adults only. Beautiful views of the city and a nice intro into how the privileged used to live. Well worth doing.", February 2019
-4,5.0,Traditional Korean wooden furniture and architecture.,, October 2018

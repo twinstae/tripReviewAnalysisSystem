@@ -1,6 +1,0 @@
-,star_point,title,text,Date of experience
-0,5.0,Very unique but only accept cash,This mall is 9 floors mall and only accept cash. There hundreds of shops in which each has different & unique designs and collections which is totally different from the other shops. But make sure that you have enough to  cash. There is one nearby ATM machine but usually crowded., December 2019
-1,5.0,DAN - APM PLACE #B122,, December 2019
-2,5.0,Great place for ladies to shop,"I'd say this is definitely a paradise for Korean fashion shopping.  It doesn't really cater to guys at all, so I was just walking around with my wife.  Great selection of jewelry and clothing, both casual and business.  Sometimes, they might say you have to buy 3 since it's wholesale.  In that scenario, we just bought with another group of people and split the cost, haha.  I don't think they liked that though!", September 2018
-3,5.0,Great for shopping boutique’s quality here,, December 2017
-4,4.0,Shopping Heaven for ladies ,"This place open from 8pm - 5am ( yes 5am ). From level 1 to level 8 mostly latest and trendy ladies clothing. Price range from USD 20 to above, Do bargain the price if you buy more.", November 2017
