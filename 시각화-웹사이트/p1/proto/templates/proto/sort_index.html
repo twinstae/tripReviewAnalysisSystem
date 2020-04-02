@@ -1,7 +1,23 @@
-{% extends "home.html" %}
+{% extends 'proto/home.html' %}
 
-{% block title %}Attractions{% endblock %}
+{% block title %}Sort{% endblock title%}
 
 {% block content %}
+    {% if three_sorts_list %}
+        <div>
+            {% for sort in three_sorts %}
+                <div class="w3-mobile w3-cell w3-padding-64 w3-container">
+                    <div class="w3-content">
+                        <h1> <a ="/TRAS/{{ sort.sort_name }}/">{{ sort.sort_name }}</a> </h1>
+                        # content
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+    #page numbers (selected page)
+    {% endif %}
 
-{% endblock %}
+    {% include "proto/pagination.html" with page=page_obj %}
+
+{% endblock content %}

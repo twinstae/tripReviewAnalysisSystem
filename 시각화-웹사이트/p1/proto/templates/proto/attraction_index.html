@@ -1,4 +1,4 @@
-{% extends "home.html" %}
+{% extends 'proto/home.html' %}
 
 {% block title %}Attractions{% endblock %}
 
@@ -9,13 +9,16 @@
                 <div class="w3-mobile w3-cell w3-padding-64 w3-container">
                     <div class="w3-content">
                         <h1> <a ="/TRAS/{{ Attraction.name }}/">{{ Attraction.name }}</a> </h1>
-                        #star_distribution
-                        #main_word_list
+                        # star_distribution
+                        # main_word_list
                     </div>
                 </div>
-            {% end if %}
+            {% endfor %}
         </div>
     {% else %}
     #page numbers (selected page)
     {% endif %}
+
+    {% include "proto/pagination.html" with page=page_obj %}
+
 {% endblock %}
