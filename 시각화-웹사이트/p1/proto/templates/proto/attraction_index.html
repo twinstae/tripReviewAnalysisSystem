@@ -3,22 +3,16 @@
 {% block title %}Attractions{% endblock %}
 
 {% block content %}
-    {% if three_attractions_list %}
-        <div>
-            {% for attraction in three_attractions %}
-                <div class="w3-mobile w3-cell w3-padding-64 w3-container">
-                    <div class="w3-content">
-                        <h1> <a ="/TRAS/{{ Attraction.name }}/">{{ Attraction.name }}</a> </h1>
-                        # star_distribution
-                        # main_word_list
+    <div class="w3-main w3-content w3-padding"  style="max-width:1200px;margin-top:100px">
+        <div class="w3-row-padding w3-padding-16 w3-center">
+            {% for Attraction in attractions_list %}
+                <div class="w3-third">
+                    <div class="w3-card-2 w3-leftbar w3-border-blue w3-margin" style="height: 300px;">
+                        <h3><a href="{% url 'attraction_detail' pk=Attraction.pk %}">{{ Attraction.name }}</a> </h3>
                     </div>
                 </div>
             {% endfor %}
         </div>
-    {% else %}
-    #page numbers (selected page)
-    {% endif %}
+    </div>
 
-    {% include "proto/pagination.html" with page=page_obj %}
-
-{% endblock %}
+{% endblock content %}

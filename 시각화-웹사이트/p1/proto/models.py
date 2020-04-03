@@ -2,11 +2,13 @@ from django.db import models
 
 # Create your models here.
 
+
 class Big_Sort(models.Model):
     sort_name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.sort_name
+
 
 class Attraction(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -17,6 +19,7 @@ class Attraction(models.Model):
     def __str__(self):
         return self.name
 
+
 class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
     star = models.PositiveSmallIntegerField()
@@ -25,7 +28,8 @@ class Review(models.Model):
     date = models.DateField(null=True)
 
     def __str__(self):
-        return str(self.star) + " : " + self.title
+        return str(self.star) + " : " + str(self.title)
+
 
 class WordStar(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
@@ -39,7 +43,8 @@ class WordStar(models.Model):
     word = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.word + " : " + self.avg_star
+        return str(self.word) + " : " + str(self.avg_star)
+
 
 class WordSentiment(models.Model):
     word = models.CharField(max_length=50, unique=True)
@@ -50,4 +55,4 @@ class WordSentiment(models.Model):
     topic5 = models.DecimalField(max_digits=5, decimal_places=4,null=True)
 
     def __str__(self):
-        return self.word + " : " +self.attraction
+        return str(self.word) + " : " + str(self.topic1)
