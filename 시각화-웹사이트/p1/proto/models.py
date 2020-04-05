@@ -15,6 +15,7 @@ class Attraction(models.Model):
     big_sort = models.ForeignKey(Big_Sort, on_delete=models.CASCADE)
     small_sort = models.CharField(max_length=30, null=True)
     address = models.CharField(max_length=100, null=True)
+    wc = models.ImageField(blank=True)
     
     def __str__(self):
         return self.name
@@ -25,7 +26,7 @@ class Review(models.Model):
     star = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=1500)
-    date = models.DateField(null=True)
+    date = models.DateField(blank=True)
 
     def __str__(self):
         return str(self.star) + " : " + str(self.title)
