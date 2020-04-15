@@ -10,10 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='wordsentiment',
-            name='attraction',
-        ),
         migrations.AlterField(
             model_name='attraction',
             name='name',

@@ -9,6 +9,10 @@
                 <div class="w3-third">
                     <div class="w3-card-2 w3-leftbar w3-border-blue w3-margin" style="height: 300px;">
                         <h3><a href="{% url 'attraction_detail' pk=Attraction.pk %}">{{ Attraction.name }}</a> </h3>
+                        {% if Attraction.wordcloud %}
+                            {% load static %}
+                            <img src="{% static 'proto/static/'|add:Attraction.name|add:'.csv.jpg' %}" class="w3-image w3-margin" style="width:70%">
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

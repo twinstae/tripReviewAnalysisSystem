@@ -13,9 +13,9 @@ class Big_Sort(models.Model):
 class Attraction(models.Model):
     name = models.CharField(max_length=100, unique=True)
     big_sort = models.ForeignKey(Big_Sort, on_delete=models.CASCADE)
-    small_sort = models.CharField(max_length=30, null=True)
+    small_sort = models.CharField(max_length=30, null=True, blank=True)
     address = models.CharField(max_length=100, null=True)
-    wc = models.ImageField(blank=True)
+    wordcloud = models.ImageField(blank=True, upload_to = "../static/proto/static")
     
     def __str__(self):
         return self.name
@@ -48,6 +48,7 @@ class WordStar(models.Model):
 
 
 class WordSentiment(models.Model):
+    attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
     word = models.CharField(max_length=50, unique=True)
     topic1 = models.DecimalField(max_digits=5, decimal_places=4)
     topic2 = models.DecimalField(max_digits=5, decimal_places=4,null=True)
