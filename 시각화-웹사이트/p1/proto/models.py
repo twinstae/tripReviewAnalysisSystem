@@ -25,7 +25,7 @@ class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
     star = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=1500)
+    text = models.CharField(max_length=10000)
     date = models.DateField(blank=True)
 
     def __str__(self):

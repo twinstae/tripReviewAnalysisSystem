@@ -15,7 +15,7 @@ class Attraction(models.Model):
     big_sort = models.ForeignKey(Big_Sort, on_delete=models.CASCADE)
     small_sort = models.CharField(max_length=30, null=True, blank=True)
     address = models.CharField(max_length=100, null=True)
-    wordcloud = models.ImageField(blank=True, upload_to = "proto/wc_image/")
+    wordcloud = models.ImageField(blank=True, upload_to = "../static/proto/static")
     
     def __str__(self):
         return self.name
@@ -25,7 +25,7 @@ class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
     star = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=1500)
+    text = models.CharField(max_length=10000)
     date = models.DateField(blank=True)
 
     def __str__(self):
