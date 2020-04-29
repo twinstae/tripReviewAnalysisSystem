@@ -15,6 +15,8 @@ class Attraction(models.Model):
     big_sort = models.ForeignKey(Big_Sort, on_delete=models.CASCADE)
     small_sort = models.CharField(max_length=30, null=True, blank=True)
     address = models.CharField(max_length=100, null=True)
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
     wordcloud = models.ImageField(blank=True, upload_to = "../static/proto/static")
     
     def __str__(self):
