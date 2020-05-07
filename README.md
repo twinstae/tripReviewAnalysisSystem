@@ -25,3 +25,5 @@
  - Bokeh
  - WordCloud
  - Django
+
+![](https://raw.githubusercontent.com/twinstae/tripReviewAnalysisSystem/master/%ED%81%AC%EB%A1%A4%EB%9F%AC-%EC%A0%84%EC%B2%98%EB%A6%AC/%EC%9B%90%EC%8B%9C%EC%9E%90%EB%A3%8C/Bongeunsa%20Temple.csv.jpg)
