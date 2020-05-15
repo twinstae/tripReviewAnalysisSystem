@@ -23,7 +23,6 @@ class AttractionDetailView(generic.DetailView):
     context_object_name = 'attraction'
     template_name = 'proto/attraction.html'
 
-
 class SortIndexView(generic.ListView):
     model = Big_Sort
     template_name = 'proto/sort_index.html'
