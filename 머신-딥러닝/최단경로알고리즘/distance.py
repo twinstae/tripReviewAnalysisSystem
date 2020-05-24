@@ -65,14 +65,40 @@ def lati_long_splitter(lati_long_str):
     y1 = float(lati_long[0][1:])
     x1 = float(lati_long[1][1:-1])
     return x1, y1
-test = glob.glob('C:/Users/USER/Desktop/학교/참빛/tripReviewAnalysisSystem/크롤러-전처리/주소/*.csv')
+#컴퓨터
+#test = glob.glob('C:/Users/USER/Desktop/학교/참빛/tripReviewAnalysisSystem/크롤러-전처리/주소/*.csv'
+#노트북
+test = glob.glob('C:/Users/dmdwn/OneDrive/바탕 화면/github/tripReviewAnalysisSystem/크롤러-전처리/주소/*.csv')
+print("파일 이름: ", test[6])
 file = test[6]
 df = pd.read_csv(file, encoding = 'utf-8', engine='python', index_col = 0)
 print(df)
-#Columns: '0'=이름, '1'=lati_long
+#Columns: '0'=이름, '1'=lati  ---------->_long df[이름][주소]
 x_0, y_0 = lati_long_splitter(df['1'][0])
 
 x_1, y_1 = lati_long_splitter(df['1'][1])
 
 print(df['0'][0], "에서 ", df['0'][1], "까지의 거리")
 print(GeoUtil.get_euclidean_distance(x_0, y_0, x_1, y_1)*100, "km")
+
+def lati_long_compare(place_1_lati_long, place_2_lati_long, place_2_name, place_near, compare_distance):
+    #거리가 a 만큼 일 때
+
+
+    x_0, y_0 = lati_long_splitter(place_1_lati_long)
+    x_1, y_1 = lati_long_splitter(place_2_lati_long)
+
+    if GeoUtil.get_euclidean_distance(x_0, y_0, x_1, y_1)*100 < compare_distance:
+        place_near.append(place_2_name)         #10km 내의 인덱스값들 저장하기
+
+    return place_near
+
+def lati_long_compare_auto(place, distance):
+    place_near_list = []
+    
+    for i in range(0, len(df['1'])):
+        lati_long_compare(df['1'][place], df['1'][i], df['0'][i], place_near_list, distance)
+    return place_near_list
+#사용법 lati
+print("Gyeongbokgung Palace에서 4km 내외 인 곳: ")
+print(lati_long_compare_auto(0, 4))
