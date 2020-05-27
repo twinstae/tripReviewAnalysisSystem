@@ -38,55 +38,58 @@
 
 {% block content %}
     <div id="map" style = "height: 800px"></div>
+	
     {% for Attraction in attractions_list %}
-		<div class="w3-quarter w3-card" id = 'content attraction id'>
-			{% load static %}
-			<img src="{% static "proto/static/title.jpg" %}" alt="title" style="width:100%">
-			<h3>title</h3>
-			<span class="w3-round-xxlarge w3-tag" style = "background-color:#fff0b3; color:#ff9900;">star</span>
-			<span class="w3-round-xxlarge w3-tag w3-color"> tag_name </span>
-			<ul>
-				<li> transit </li>
-				<li> Spend ???</li>
-				<li> OPEN </li>
-			</ul>
-			button -> click new data -> AJAX 
-		</div>
+	<div class="w3-quarter w3-card" id = {{ Attraction.pk }}>
+		{% load static %}
+		<img src="{% static "{{Attraction.name}}.jpg" %}" alt="title" style="width:100%">
+		<h3>{{Attraction.name}}</h3>
+		<span class="w3-round-xxlarge w3-tag" style = "background-color:#fff0b3; color:#ff9900;">star</span>
+		<span class="w3-round-xxlarge w3-tag w3-color"> tag_name </span>
+		<ul>
+			<li> Transit </li>
+			<li> Spend </li>
+			<li> OPEN </li>
+		</ul>
+		<p>button -> click new data -> AJAX <p>
+	</div>
 	{% endfor %}
     
     
     <script>
-        var map, popup, Popup;
+        var map;
+		
+		{% for Attraction in attractions_list %}
+		var popup{{ Attraction.pk }}, Popup{{ Attraction.pk }};
+		{% endfor %}
 
         function initMap() {
 			map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: 37.612085, lng: 127.00825},
-			zoom:13
+			zoom:12
 			});
 			
 			{% for Attraction in attractions_list %}
-				var marker{% attraction id %} = new google.maps.Marker({
-					position: {lat: {% Attraction.lat %}, lng: ???},
-					map: map,
-					title:"Hello World!"
-				});
-				marker{% attraction id %}.setMap(map);
-				
-				Popup = createPopupClass();
-				popup = new Popup(
-					new google.maps.LatLng(37.5773616, 126.9766844),
-					document.getElementById('attraction id')
-				);
-					
-				var is_over = true;
-				marker{% attraction id %}.addListener('click', function() {
-					popup.setMap(map);
-				});
-				marker{% attraction id %}.addListener('mouseout', function() {
-				});
-				
-				# 경로...
-				
+			var marker{{ Attraction.pk }} = new google.maps.Marker({
+				position: {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}},
+				map: map
+			});
+			marker{{ Attraction.pk }}.setMap(map);
+			
+			Popup = createPopupClass();
+			popup{{ Attraction.pk }} = new Popup(
+				new google.maps.LatLng({{ Attraction.latitude }}, {{ Attraction.longitude }}),
+				document.getElementById({{ Attraction.pk }})
+			);
+			
+			marker{{ Attraction.pk }}.addListener('click', function() {
+				popup{{ Attraction.pk }}.setMap(map);
+			});
+			
+			marker{{ Attraction.pk }}.addListener('mouseout', function(){ 
+				popup{{ Attraction.pk }}.setMap(null);
+			});
+			
 			{% endfor %}
 		}
         

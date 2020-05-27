@@ -7,7 +7,6 @@ from proto.models import Attraction
 class HomeView(generic.TemplateView):
     template_name = 'proto/home.html'
 
-
 class AttractionIndexView(generic.ListView):
     model = Attraction
     template_name = 'proto/attraction_index.html'
@@ -23,7 +22,11 @@ class AttractionDetailView(generic.DetailView):
     context_object_name = 'attraction'
     template_name = 'proto/attraction.html'
 
-class MapView(view?):
+class MapView(generic.ListView):
     model = Attraction
     template_name = 'proto/map.html'
-    context_object_name = 'map_data'
+    context_object_name = 'attractions_list'
+    
+    def get_queryset(self):  # 컨텍스트 오버라이딩
+        attractions_list = Attraction.objects.all()[:9]
+        return attractions_list
