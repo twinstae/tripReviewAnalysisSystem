@@ -40,9 +40,9 @@
     <div id="map" style = "height: 800px"></div>
 	
     {% for Attraction in attractions_list %}
-	<div class="w3-quarter w3-card" id = {{ Attraction.pk }}>
+	<div class="w3-quarter w3-card" id = "{{ Attraction.pk }}">
 		{% load static %}
-		<img src="{% static "{{Attraction.name}}.jpg" %}" alt="title" style="width:100%">
+		<img src="{% static "proto/static/"|add:Attraction.name|add:".jpg" %}" alt="title" style="width:100%">
 		<h3>{{Attraction.name}}</h3>
 		<span class="w3-round-xxlarge w3-tag" style = "background-color:#fff0b3; color:#ff9900;">star</span>
 		<span class="w3-round-xxlarge w3-tag w3-color"> tag_name </span>
@@ -54,7 +54,6 @@
 		<p>button -> click new data -> AJAX <p>
 	</div>
 	{% endfor %}
-    
     
     <script>
         var map;
