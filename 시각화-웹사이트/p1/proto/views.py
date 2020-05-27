@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from proto.models import Attraction, Big_Sort
+from proto.models import Attraction
 
 # Create your views here.
 
@@ -23,17 +23,7 @@ class AttractionDetailView(generic.DetailView):
     context_object_name = 'attraction'
     template_name = 'proto/attraction.html'
 
-class SortIndexView(generic.ListView):
-    model = Big_Sort
-    template_name = 'proto/sort_index.html'
-    context_object_name = 'sorts_list'
-
-    def get_queryset(self):  # 컨텍스트 오버라이딩
-        sorts_list = Big_Sort.objects.all()
-        return sorts_list
-
-
-class SortDetailView(generic.DetailView):
-    model = Big_Sort
-    template_name = 'proto/sorting.html'
-
+class MapView(view?):
+    model = Attraction
+    template_name = 'proto/map.html'
+    context_object_name = 'map_data'
