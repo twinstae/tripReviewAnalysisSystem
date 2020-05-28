@@ -129,3 +129,7 @@ for i in range(59):
     create_tuple(lati_long_compare_auto(i, 0.5)[1], i)
     print(df['0'][i],"로 부터 1.5km인 튜플 쌍들: ")
     create_tuple(lati_long_compare_auto(i, 1.5)[1], i)
+"""
+해야할 것: 현재 0~60파일로만 되어있음 --------> 0~ 180 모두
+csv파일로 저장 (데이터프레임)
+"""
