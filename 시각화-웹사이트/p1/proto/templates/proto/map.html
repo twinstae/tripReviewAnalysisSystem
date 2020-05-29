@@ -37,6 +37,9 @@
 {% block title %} TARS Map {% endblock title%}
 
 {% block content %}
+
+	<div id="like_button_container"></div>
+
     <div id="map" style = "height: 800px"></div>
 	
     {% for Attraction in attractions_list %}
@@ -51,7 +54,6 @@
 			<li> Spend </li>
 			<li> OPEN </li>
 		</ul>
-		<p>button -> click new data -> AJAX <p>
 	</div>
 	{% endfor %}
     
@@ -82,6 +84,16 @@
 			);
 			
 			marker{{ Attraction.pk }}.addListener('click', function() {
+				var pk = {{Attraction.pk}}
+				$.ajax({
+				  type: "POST",
+				  url: "{% url 'new_r' %}",
+				  data: {'pk': pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+				  dataType: "json",
+				  success: function(response){
+					placeMarkerAndPanTo(response);
+				  }
+				});
 				popup{{ Attraction.pk }}.setMap(map);
 			});
 			
@@ -89,9 +101,22 @@
 				popup{{ Attraction.pk }}.setMap(null);
 			});
 			
+			marker{{ Attraction.pk }}.addListener('dbclick', function(){ 
+					
+			});
+			
 			{% endfor %}
 		}
         
+		function placeMarkerAndPanTo(Attraction) {
+			var marker = new google.maps.Marker({
+				position: {lat: Attraction['latitude'], lng: Attraction['longitude']},
+				map: map
+				});
+				
+			map.panTo({lat: Attraction['latitude'], lng: Attraction['longitude']})
+		}
+		
         function createPopupClass() {
             function Popup(position, content) {
                 this.position = position;
@@ -151,5 +176,15 @@
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4&callback=initMap"
     async defer></script>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+	{% for Attraction in attractions_list %}
+	<script type="text/javascript">
+	  
+	</script>
+	{% endfor %}
+
+	
 
 {% endblock content %}
