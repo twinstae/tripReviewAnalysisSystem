@@ -3,7 +3,8 @@ import tomotopy as tp
 import pandas as pd
 import os
 nltk.download('stopwords')
-
+import nltk
+nltk.download('wordnet')
 def data_text_cleaning(data):
     # 영문자 이외 문자는 공백으로 변환
     only_english = re.sub('[^a-zA-Z]', ' ', data)
@@ -25,13 +26,17 @@ def data_text_cleaning(data):
 http://blog.naver.com/PostView.nhn?blogId=vangarang&logNo=220963244354
 stemmer를 통한 단어는 결과값에서 나오듯 city----> citi, 등 없는말을 만들어내기도 한다
 이에 반에 lemmatizing은 단어 가 문장 속에서 어떤 품사로 쓰였는지 판단 가능하다.
-"""
-github_path = 'C:/Users/USER/Desktop/학교/참빛/tripReviewAnalysisSystem/'
 
+"""
+#컴퓨터
+#github_path = 'C:/Users/USER/Desktop/학교/참빛/tripReviewAnalysisSystem/'
+#노트북
+github_path = 'C:/Users/dmdwn/OneDrive/바탕 화면/github/tripReviewAnalysisSystem/'
 file_list = os.listdir(github_path + '크롤러-전처리/원시자료/')
 
 df = pd.read_csv(github_path + '크롤러-전처리/원시자료/' + file_list[1], encoding='utf-8', engine='python', index_col=0)
-print(df['text'])
+print(file_list[1])
+#print(df['text'])
 #토픽의 개수(k), alpha 파라미터, eta 파라미터, 말뭉치 최소 갯수(미만 제거)
 model = tp.LDAModel(k=5, alpha=0.1, eta=0.01, min_cf=5)
 for text in df['text']:
@@ -45,12 +50,31 @@ print('Vocab size: ', model.num_vocabs)
 
 #200회 반복 동안 log값 기록 출력
 for i in range(200):
-    print('Iteration {}\tLL per word: {}'.format(i, model.ll_per_word))
+    #print('Iteration {}\tLL per word: {}'.format(i, model.ll_per_word))
     model.train(1)
 #top_n -----> 토픽 별 상위 단어 갯수
+from nltk.stem import WordNetLemmatizer
 for i in range(model.k):
     res = model.get_topic_words(i, top_n=10)
     print('Topic #{}'.format(i), end='\t')
-    print(', '.join(w for w, p in res))
-    
-#5/26 이후 각종 가중치를 갖고 건들여 보기
+    print(', '.join(w for (w, p) in res))
+    lm = WordNetLemmatizer()
+
+    words = list(w for w, p in res)
+    words_f = []
+    for i in words:
+        print(i)
+        words_f.append(lm.lemmatize(i))
+    print(words)
+    print(words_f)
+    #words.append(lm.lemmatize(w) for (w,p) in res)
+    #print(words)
+    #lemmatize 가 안된다 ㅠㅠ 왜....
+#원형 찾기
+from nltk.tag import pos_tag
+tagged_list = pos_tag(words)
+print(tagged_list)
+nouns_list = [t[0] for t in tagged_list if t[1] == "NN"]
+print(nouns_list)
+
+#allnoun = [word for word, pos in tagged if pos in ['NN', 'NNP']]
