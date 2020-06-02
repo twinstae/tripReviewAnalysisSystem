@@ -13,7 +13,7 @@
         border-radius: 5px;
         font-family: sans-serif;
         overflow-y: auto;
-        max-height: 500px;
+        max-height: 400px;
         box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
       }
       /* The parent of the bubble. A zero-height div at the top of the tip. */
@@ -49,10 +49,12 @@
 		<h3>{{Attraction.name}}</h3>
 		<span class="w3-round-xxlarge w3-tag" style = "background-color:#fff0b3; color:#ff9900;">star</span>
 		<span class="w3-round-xxlarge w3-tag w3-color"> tag_name </span>
-        <div class="site_boxes"></div>
-        <div class="site_boxes"></div>
-        <div class="site_boxes"></div>
-</div>
+		<ul>
+			<li> Transit </li>
+			<li> Spend </li>
+			<li> OPEN </li>
+            <li> See Review </li>
+		</ul>
 	</div>
 	{% endfor %}
     
