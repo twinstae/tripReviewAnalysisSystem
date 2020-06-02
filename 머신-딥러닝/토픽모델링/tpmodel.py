@@ -2,6 +2,7 @@ import nltk.stem, nltk.corpus, nltk.tokenize, re
 import tomotopy as tp
 import pandas as pd
 import os
+
 nltk.download('stopwords')
 import nltk
 nltk.download('wordnet')
@@ -34,47 +35,84 @@ stemmer를 통한 단어는 결과값에서 나오듯 city----> citi, 등 없는
 github_path = 'C:/Users/dmdwn/OneDrive/바탕 화면/github/tripReviewAnalysisSystem/'
 file_list = os.listdir(github_path + '크롤러-전처리/원시자료/')
 
-df = pd.read_csv(github_path + '크롤러-전처리/원시자료/' + file_list[1], encoding='utf-8', engine='python', index_col=0)
-print(file_list[1])
-#print(df['text'])
-#토픽의 개수(k), alpha 파라미터, eta 파라미터, 말뭉치 최소 갯수(미만 제거)
-model = tp.LDAModel(k=5, alpha=0.1, eta=0.01, min_cf=5)
-for text in df['text']:
-    model.add_doc(data_text_cleaning(text))  #전처리 결과 넣기
+dic1 = dict()
 
-#간단한 num_words, num_vocab에 관하여 알기 위한 줄, 생략가능
-model.train(0)
-print('Total docs: ', len(model.docs))
-print('Total words: ', model.num_words)
-print('Vocab size: ', model.num_vocabs)
+num_df = 0
+while True:
+    input_words_list = []
+    try:
+        print("Please type file num(out to finish): ")
 
-#200회 반복 동안 log값 기록 출력
-for i in range(200):
-    #print('Iteration {}\tLL per word: {}'.format(i, model.ll_per_word))
-    model.train(1)
-#top_n -----> 토픽 별 상위 단어 갯수
-from nltk.stem import WordNetLemmatizer
-for i in range(model.k):
-    res = model.get_topic_words(i, top_n=10)
-    print('Topic #{}'.format(i), end='\t')
-    print(', '.join(w for (w, p) in res))
-    lm = WordNetLemmatizer()
+        filenum = input()
+        if filenum == 'out':
+            break
+        filenum = int(filenum)
+        print(file_list[filenum])
+        df = pd.read_csv(github_path + '크롤러-전처리/원시자료/' + file_list[filenum], encoding='utf-8', engine='python', index_col=0)
+    except:
+        print("Wrong File please type something else than ", filenum)
+        continue
+    #print(df['text'])
+    #토픽의 개수(k), alpha 파라미터, eta 파라미터, 말뭉치 최소 갯수(미만 제거)
+    model = tp.LDAModel(k=3, alpha=0.1, eta=0.01, min_cf=5)
+    for text in df['text']:
+        model.add_doc(data_text_cleaning(text))  #전처리 결과 넣기
 
-    words = list(w for w, p in res)
-    words_f = []
-    for i in words:
-        print(i)
-        words_f.append(lm.lemmatize(i))
-    print(words)
-    print(words_f)
-    #words.append(lm.lemmatize(w) for (w,p) in res)
-    #print(words)
-    #lemmatize 가 안된다 ㅠㅠ 왜....
-#원형 찾기
-from nltk.tag import pos_tag
-tagged_list = pos_tag(words)
-print(tagged_list)
-nouns_list = [t[0] for t in tagged_list if t[1] == "NN"]
-print(nouns_list)
+    #간단한 num_words, num_vocab에 관하여 알기 위한 줄, 생략가능
+    model.train(0)
+    print('Total docs: ', len(model.docs))
+    print('Total words: ', model.num_words)
+    print('Vocab size: ', model.num_vocabs)
 
-#allnoun = [word for word, pos in tagged if pos in ['NN', 'NNP']]
+    #200회 반복 동안 log값 기록 출력
+    for i in range(200):
+        #print('Iteration {}\tLL per word: {}'.format(i, model.ll_per_word))
+        model.train(1)
+    #top_n -----> 토픽 별 상위 단어 갯수
+    from nltk.stem import WordNetLemmatizer
+    from nltk.tag import pos_tag
+
+    for i in range(model.k):
+        res = model.get_topic_words(i, top_n=10)
+        print('Topic #{}'.format(i), end='\t')
+        print(', '.join(w for (w, p) in res))
+        lm = WordNetLemmatizer()
+
+        words = list(w for w, p in res)
+        words_f = []
+        for i in words:
+            words_f.append(lm.lemmatize(i))
+
+        tagged_list = pos_tag(words)
+        # 명사 리스트
+        nouns_list = [t[0] for t in tagged_list if t[1] == "NN"]
+        # 형용사 리스트, 태깅된것이 거의? 없다
+        #adjactive_list = [t[0] for t in tagged_list if t[1] == "J"]
+        #print(nouns_list)
+        #print(adjactive_list)
+    while True:
+        words_input = input("Type a word to append(type 1 to finish): ")
+        if words_input == '1':
+            break
+        else:
+
+            input_words_list.append(words_input)
+
+    filename = file_list[filenum]
+    print(input_words_list)
+    #re_filename = []
+    #re_filename.append(filename)
+    print(filename)
+    #for val in input_words_list:
+    #    dic1.setdefault(filename, []).append(val)
+    dic1.setdefault(filename, input_words_list)
+    num_df += 1
+
+
+print(dic1)
+import csv
+
+with open('keys.csv', 'w') as f:
+    w = csv.writer(f)
+    w.writerow(dic1.keys())
+    w.writerow(dic1.values())
