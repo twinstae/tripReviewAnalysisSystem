@@ -134,24 +134,41 @@ def create_tuple(list_index, i):
     #print(list_GP)
     return list_GP
 
-for i in range(177):
+"""for i in range(177):
     print(df['0'][i],"로 부터 0.5km인 튜플 쌍들: ")
     create_tuple(lati_long_compare_auto(i, 0.5)[1], i)
     print(df['0'][i],"로 부터 1.5km인 튜플 쌍들: ")
-    create_tuple(lati_long_compare_auto(i, 1.5)[1], i)
+    create_tuple(lati_long_compare_auto(i, 1.5)[1], i)"""
+
 """
 해야할 것: 현재 0~60파일로만 되어있음 --------> 0~ 180 모두
 csv파일로 저장 (데이터프레임)
 """
-df_final = pd.DataFrame(index=range(0, 177), columns=['Name', '0.5', '1.5'])
-print(df_final)
-for i in range(177):
-    #print(df['0'][i],"로 부터 0.5km인 튜플 쌍들: ")
-    df_final['Name'][i] = df['0'][i]
-    df_final['0.5'][i] = create_tuple(lati_long_compare_auto(i, 0.5)[1], i)
-    #create_tuple(lati_long_compare_auto(i, 0.5)[1], i)
-    #print(df['0'][i],"로 부터 1.5km인 튜플 쌍들: ")
-    df_final['1.5'][i] = create_tuple(lati_long_compare_auto(i, 1.5)[1], i)
-    #create_tuple(lati_long_compare_auto(i, 1.5)[1], i)
-print(df_final)
-df_final.to_csv("distance0~176.csv")
+def create_csv(df):
+    df_final = pd.DataFrame(index=range(0, 177), columns=['Name', '0.5', '1.5'])
+    for i in range(177):
+        #print(df['0'][i],"로 부터 0.5km인 튜플 쌍들: ")
+        df_final['Name'][i] = df['0'][i]
+        df_final['0.5'][i] = create_tuple(lati_long_compare_auto(i, 0.5)[1], i)
+        #create_tuple(lati_long_compare_auto(i, 0.5)[1], i)
+        #print(df['0'][i],"로 부터 1.5km인 튜플 쌍들: ")
+        df_final['1.5'][i] = create_tuple(lati_long_compare_auto(i, 1.5)[1], i)
+        #create_tuple(lati_long_compare_auto(i, 1.5)[1], i)
+    print(df_final)
+    df_final.to_csv("distance0~176.csv")
+#df=데이터프레임, key_in=primary key 값
+
+def in_out_key_15(key):
+    re_key = create_tuple(lati_long_compare_auto(key, 1.5)[1], key)
+    re_return = []
+    for i in re_key:
+        re_return.append(i[1])
+    return re_return
+def in_out_key_5(key):
+    re_key = create_tuple(lati_long_compare_auto(key, 0.5)[1], key)
+    re_return = []
+    for i in re_key:
+        re_return.append(i[1])
+    return re_return
+print(in_out_key_5(0))
+print(in_out_key_15(0))
