@@ -1,7 +1,7 @@
 {% extends 'proto/home.html' %}
 
 {% block specific-style %}
-.popup-bubble {
+	.popup-bubble {
         /* Position the bubble centred-above its parent. */
         position: absolute;
         top: 0;
@@ -17,7 +17,7 @@
         box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
       }
       /* The parent of the bubble. A zero-height div at the top of the tip. */
-      .popup-bubble-anchor {
+    .popup-bubble-anchor {
         /* Position the div a fixed distance above the tip. */
         position: absolute;
         width: 100%;
@@ -25,7 +25,7 @@
         left: 0;
       }
       /* JavaScript will position this div at the bottom of the popup tip. */
-      .popup-container {
+    .popup-container {
         cursor: auto;
         height: 0;
         position: absolute;
@@ -52,26 +52,30 @@
         <div class="site_boxes"></div>
         <div class="site_boxes"></div>
         <div class="site_boxes"></div>
-</div>
 	</div>
 	{% endfor %}
     
     <script>
-        var map;
+		var select_data = ['abc','이건가'];
 		
 		{% for Attraction in attractions_list %}
 		var popup{{ Attraction.pk }}, Popup{{ Attraction.pk }};
 		{% endfor %}
 
         function initMap() {
+			var directionsService = new google.maps.DirectionsService();
+			var directionsRenderer = new google.maps.DirectionsRenderer();
 			map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: 37.612085, lng: 127.00825},
 			zoom:12
 			});
-			
+			directionsRenderer.setMap(map);
 			{% for Attraction in attractions_list %}
+			
+			var AttrPosition = {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}};
+			
 			var marker{{ Attraction.pk }} = new google.maps.Marker({
-				position: {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}},
+				position: AttrPosition,
 				map: map
 			});
 			marker{{ Attraction.pk }}.setMap(map);
@@ -83,25 +87,25 @@
 			);
 			
 			marker{{ Attraction.pk }}.addListener('click', function() {
-				var pk = {{Attraction.pk}}
+				popup{{ Attraction.pk }}.setMap(map);
+				
+				let name = "{{Attraction.name}}";
+				
 				$.ajax({
 				  type: "POST",
 				  url: "{% url 'new_r' %}",
-				  data: {'pk': pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+				  data: {'name': name ,'csrfmiddlewaretoken': '{{ csrf_token }}'},
 				  dataType: "json",
 				  success: function(response){
-					placeMarkerAndPanTo(response);
+					response.forEach(function(element){
+						placeMarkerAndPanTo(element);
+					});
 				  }
-				});
-				popup{{ Attraction.pk }}.setMap(map);
+				});	
 			});
 			
 			marker{{ Attraction.pk }}.addListener('mouseout', function(){ 
 				popup{{ Attraction.pk }}.setMap(null);
-			});
-			
-			marker{{ Attraction.pk }}.addListener('dbclick', function(){ 
-					
 			});
 			
 			{% endfor %}
@@ -112,8 +116,22 @@
 				position: {lat: Attraction['latitude'], lng: Attraction['longitude']},
 				map: map
 				});
-				
 			map.panTo({lat: Attraction['latitude'], lng: Attraction['longitude']})
+		}
+		function calcRoute(startAttraction, endAttraction, directionsService, directionsRenderer) {		  
+			  start = new google.maps.LatLng(startAttraction['latitude'], startAttraction['longitude']);
+			  end = new google.maps.LatLng(endAttraction['latitude'], endAttraction['longitude']);
+			  var request = {
+				origin: start,
+				destination: end,
+				travelMode: 'TRANSIT'
+			  };
+			  directionsService.route(request, function(result, status) {
+				if (status == 'OK') {
+				  console.log(result);
+				  directionsRenderer.setDirections(result);
+				}
+			  });
 		}
 		
         function createPopupClass() {
@@ -177,13 +195,6 @@
     async defer></script>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	
-	{% for Attraction in attractions_list %}
-	<script type="text/javascript">
-	  
-	</script>
-	{% endfor %}
-
 	
 
 {% endblock content %}
