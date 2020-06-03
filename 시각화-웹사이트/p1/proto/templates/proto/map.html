@@ -90,15 +90,18 @@
 				popup{{ Attraction.pk }}.setMap(map);
 				
 				let name = "{{Attraction.name}}";
-				
+				let pk = {{ Attraction.pk }};
 				$.ajax({
 				  type: "POST",
 				  url: "{% url 'new_r' %}",
-				  data: {'name': name ,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+				  data: {'pk':pk, 'name': name ,'csrfmiddlewaretoken': '{{ csrf_token }}'},
 				  dataType: "json",
 				  success: function(response){
-					response.forEach(function(element){
-						placeMarkerAndPanTo(element);
+					
+					// 배열이 아니면 에러 출력
+					console.assert(Array.isArray(response), {errorMsg: "response is not an Array of Attraction"});
+					response.forEach(function(an_attraction){
+						placeMarkerAndPanTo(an_attraction);
 					});
 				  }
 				});	
@@ -111,13 +114,17 @@
 			{% endfor %}
 		}
         
-		function placeMarkerAndPanTo(Attraction) {
+		function placeMarkerAndPanTo(an_attraction) {
+		
+			console.assert(typeof an_attraction.latitude == typeof 37.5923, "latitude is not float" + String(an_attraction.latitude))
+		
 			var marker = new google.maps.Marker({
-				position: {lat: Attraction['latitude'], lng: Attraction['longitude']},
+				position: {lat: an_attraction.latitude, lng: an_attraction.longitude},
 				map: map
 				});
-			map.panTo({lat: Attraction['latitude'], lng: Attraction['longitude']})
+			map.panTo({lat: an_attraction.latitude, lng: an_attraction.longitude})
 		}
+		
 		function calcRoute(startAttraction, endAttraction, directionsService, directionsRenderer) {		  
 			  start = new google.maps.LatLng(startAttraction['latitude'], startAttraction['longitude']);
 			  end = new google.maps.LatLng(endAttraction['latitude'], endAttraction['longitude']);

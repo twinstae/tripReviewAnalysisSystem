@@ -35,20 +35,26 @@ class MapView(generic.ListView):
     context_object_name = 'attractions_list'
     
     def get_queryset(self):  # 컨텍스트 오버라이딩
-        #별점이 최상위인 여행지 5개
-        attractions_list = Attraction.objects.all()[:3]
+        #별점이 최상위인 여행지 5개를 넣고 싶다!
+        attractions_list = Attraction.objects.all()[:5]
+        
+        assert len(attractions_list) > 1
         return attractions_list
         
 def new_r(request):
     name = request.POST.get('name', None)
-    start_attraction_row = dist_df[dist_df["Name"] == name]
-    end_name_list = []  
+    pk = request.POST.get('pk', None)
+    assert type(pk) == type(1)
     
+    end_name_list = list(range(pk+10,pk+15)) # 임시로 넣은 데이터
             
-    Attractions = Attraction.objects.filter(name__in=end_name_list)
+    Attractions = Attraction.objects.filter(pk__in=end_name_list)
     
     attractions = [{"latitude": a_Attraction.latitude, "longitude": a_Attraction.longitude} for a_Attraction in Attractions]
     
-    context = attractions
+    assert len(attractions) > 1 
+    context = json.dumps(attractions)
     
-    return HttpResponse(json.dumps(context), content_type="application/json")
+    # json 값을 확인하고 싶다...
+    
+    return HttpResponse(context, content_type="application/json")
