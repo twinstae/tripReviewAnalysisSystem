@@ -97,32 +97,34 @@
 				  data: {'pk':pk, 'name': name ,'csrfmiddlewaretoken': '{{ csrf_token }}'},
 				  dataType: "json",
 				  success: function(response){
-					
 					// 배열이 아니면 에러 출력
 					console.assert(Array.isArray(response), {errorMsg: "response is not an Array of Attraction"});
-					response.forEach(function(an_attraction){
-						placeMarkerAndPanTo(an_attraction);
+					
+					response.forEach(function(element){
+						console.log(element)
+						placeMarkerAndPanTo(element);
 					});
 				  }
 				});	
 			});
 			
 			marker{{ Attraction.pk }}.addListener('mouseout', function(){ 
-				popup{{ Attraction.pk }}.setMap(null);
+				setTimeout(function(){ popup{{ Attraction.pk }}.setMap(null); }, 10000);
 			});
 			
 			{% endfor %}
 		}
         
-		function placeMarkerAndPanTo(an_attraction) {
+		function placeMarkerAndPanTo(new_attraction) {
 		
-			console.assert(typeof an_attraction.latitude == typeof 37.5923, "latitude is not float" + String(an_attraction.latitude))
-		
+			console.assert(typeof new_attraction.latitude == typeof 37.5923, "latitude is not float" + String(new_attraction.latitude))
+			
 			var marker = new google.maps.Marker({
-				position: {lat: an_attraction.latitude, lng: an_attraction.longitude},
+				position: {lat: new_attraction.latitude, lng: new_attraction.longitude},
 				map: map
 				});
-			map.panTo({lat: an_attraction.latitude, lng: an_attraction.longitude})
+			
+			map.panTo({lat: new_attraction.latitude, lng: new_attraction.longitude})
 		}
 		
 		function calcRoute(startAttraction, endAttraction, directionsService, directionsRenderer) {		  

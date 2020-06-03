@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from proto.models import Attraction
 from django.http import HttpResponse
-
+from django.forms.models import model_to_dict
 import json
 # Create your views here.
 
@@ -43,14 +43,15 @@ class MapView(generic.ListView):
         
 def new_r(request):
     name = request.POST.get('name', None)
-    pk = request.POST.get('pk', None)
-    assert type(pk) == type(1)
+    pk = int(request.POST.get('pk', None))
+    assert type(pk) == type(1), type(pk)
     
-    end_name_list = list(range(pk+10,pk+15)) # 임시로 넣은 데이터
+    end_name_list = list(range(pk+10,pk+12)) # 임시로 넣은 데이터
             
     Attractions = Attraction.objects.filter(pk__in=end_name_list)
     
-    attractions = [{"latitude": a_Attraction.latitude, "longitude": a_Attraction.longitude} for a_Attraction in Attractions]
+    #파이썬 객체를 dictionary로 만듭니다. 워드클라우드는 이미지라 json으로 못 만들어서 버렸습니다.
+    attractions = [model_to_dict(attraction, fields = ["name","latitude","longitude"]) for attraction in Attractions]
     
     assert len(attractions) > 1 
     context = json.dumps(attractions)
