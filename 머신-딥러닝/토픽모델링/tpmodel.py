@@ -33,24 +33,28 @@ stemmer를 통한 단어는 결과값에서 나오듯 city----> citi, 등 없는
 #github_path = 'C:/Users/USER/Desktop/학교/참빛/tripReviewAnalysisSystem/'
 #노트북
 github_path = 'C:/Users/dmdwn/OneDrive/바탕 화면/github/tripReviewAnalysisSystem/'
-file_list = os.listdir(github_path + '크롤러-전처리/원시자료/')
-
+#file_list = os.listdir(github_path + '크롤러-전처리/원시자료/')
+file_list = os.listdir('C:/Users/dmdwn/OneDrive/바탕 화면/test/')
 dic1 = dict()
 
 num_df = 0
+num_file = 0
 while True:
     input_words_list = []
     try:
-        print("Please type file num(out to finish): ")
+        #입력받게끔
+        #print("Please type file num(out to finish): ")
 
-        filenum = input()
+        #filenum = input()
+        filenum = num_file
         if filenum == 'out':
             break
         filenum = int(filenum)
         print(file_list[filenum])
-        df = pd.read_csv(github_path + '크롤러-전처리/원시자료/' + file_list[filenum], encoding='utf-8', engine='python', index_col=0)
+        #df = pd.read_csv(github_path + '크롤러-전처리/원시자료/' + file_list[filenum], encoding='utf-8', engine='python', index_col=0)
+        df = pd.read_csv('C:/Users/dmdwn/OneDrive/바탕 화면/test/' + file_list[filenum], encoding='utf-8', engine='python', index_col=0)
     except:
-        print("Wrong File please type something else than ", filenum)
+        #print("Wrong File please type something else than ", filenum)
         continue
     #print(df['text'])
     #토픽의 개수(k), alpha 파라미터, eta 파라미터, 말뭉치 최소 갯수(미만 제거)
@@ -72,6 +76,7 @@ while True:
     from nltk.stem import WordNetLemmatizer
     from nltk.tag import pos_tag
 
+    words_f = []
     for i in range(model.k):
         res = model.get_topic_words(i, top_n=10)
         print('Topic #{}'.format(i), end='\t')
@@ -79,10 +84,18 @@ while True:
         lm = WordNetLemmatizer()
 
         words = list(w for w, p in res)
-        words_f = []
+        print(words)
+        #동일한 단어 구별 조건 추가
+        same = 0
         for i in words:
-            words_f.append(lm.lemmatize(i))
-
+            for k in words_f:
+                if i == k:
+                    same = 1
+            if same == 0:
+                words_f.append(lm.lemmatize(i))
+            same = 0
+        print(words_f)
+        words_appended = words_f
         tagged_list = pos_tag(words)
         # 명사 리스트
         nouns_list = [t[0] for t in tagged_list if t[1] == "NN"]
@@ -90,25 +103,26 @@ while True:
         #adjactive_list = [t[0] for t in tagged_list if t[1] == "J"]
         #print(nouns_list)
         #print(adjactive_list)
-    while True:
+    """while True:
         words_input = input("Type a word to append(type 1 to finish): ")
         if words_input == '1':
             break
         else:
 
-            input_words_list.append(words_input)
+            input_words_list.append(words_input)"""
 
     filename = file_list[filenum]
-    print(input_words_list)
+    #print(input_words_list)
     #re_filename = []
     #re_filename.append(filename)
-    print(filename)
+    #print(filename)
     #for val in input_words_list:
     #    dic1.setdefault(filename, []).append(val)
-    dic1.setdefault(filename, input_words_list)
+    dic1.setdefault(filename, words_appended)
     num_df += 1
-
-
+    num_file += 1
+    if num_file == 179:
+        break
 print(dic1)
 import csv
 
