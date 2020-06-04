@@ -39,3 +39,12 @@ def new_r(request):
                'longitude': attraction.longitude }
     
     return HttpResponse(json.dumps(context), content_type="application/json")
+
+
+"""def new_r(request):
+    pk = request.POST.get('pk', None)
+    attraction_reviews_posi_nega = get_object_or_404(Attraction, pk=str(int(pk) + 10))
+    context = {'good_review' : attraction.positive_review, 'bad_review' : attraction.negative_review}
+    
+    return HttpResponse(json.dumps(context), content_type="application/json")"""
+
