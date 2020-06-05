@@ -68,4 +68,4 @@ def new_r(request):
     attraction_reviews_posi_nega = get_object_or_404(Attraction, pk=str(int(pk) + 10))
     context = {'good_review' : attraction.positive_review, 'bad_review' : attraction.negative_review}
 
-    return HttpResponse(json.dumps(context), content_type="application/json")"""
+    return HttpResponse(json.dumps(context), content_type="application/json")"""  # 무엇을 누룰때 어떤것이 나오는지를 설정하는것, 무엇은 정확히..

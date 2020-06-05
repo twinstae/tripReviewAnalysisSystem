@@ -33,7 +33,7 @@ class Review(models.Model):
     travelertype_business = models.CharField(max_length=10000, default = '')
     travelertype_solo = models.CharField(max_length=10000, default = '')
     travelertype_couple = models.CharField(max_length=10000, default = '')
-    travelertype_friend = models.CharField(max_length=10000, default = '')
+    travelertype_friend = models.CharField(max_length=10000, default = '')   # 필드를 저장하는 방식은 옳게 했지만 조금 더 깔끔하게 만들순 없을까?
     
     def __str__(self):
         return str(self.star) + " : " + str(self.title)
