@@ -29,7 +29,12 @@ class Review(models.Model):
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=10000)
     date = models.DateField(blank=True)
-
+    travelertype_family = models.CharField(max_length=10000, default = '')
+    travelertype_business = models.CharField(max_length=10000, default = '')
+    travelertype_solo = models.CharField(max_length=10000, default = '')
+    travelertype_couple = models.CharField(max_length=10000, default = '')
+    travelertype_friend = models.CharField(max_length=10000, default = '')
+    
     def __str__(self):
         return str(self.star) + " : " + str(self.title)
 
