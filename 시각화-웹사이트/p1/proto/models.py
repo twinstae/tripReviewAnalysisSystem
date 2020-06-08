@@ -28,7 +28,8 @@ class Review(models.Model):
     star = models.PositiveSmallIntegerField()
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=10000)
-    date = models.DateField(blank=True)
+    date = models.DateField(blank=True, null=True)
+    travelertype = models.CharField(max_length=10000, default = '')
 
     def __str__(self):
         return str(self.star) + " : " + str(self.title)

@@ -8,6 +8,10 @@ import json
 
 import pandas as pd
 
+#url = "C:/Users/taehee/Documents/GitHub/tripReviewAnalysisSystem/시각화-웹사이트/p1/static/proto/static/distance0~176.csv"
+url = r"C:\Users\Jeong\Documents\GitHub\tripReviewAnalysisSystem\시각화-웹사이트\p1\static\proto\static\distance0~176.csv"
+dist_df = pd.read_csv(url)
+
 class HomeView(generic.TemplateView):
     template_name = 'proto/home.html'
 
@@ -55,4 +59,13 @@ def new_r(request):
     
     # json 값을 확인하고 싶다...
     
+    #return HttpResponse(json.dumps(context), content_type="application/json")
+
     return HttpResponse(context, content_type="application/json")
+
+"""def new_r(request):
+    pk = request.POST.get('pk', None)
+    attraction_reviews_posi_nega = get_object_or_404(Attraction, pk=str(int(pk) + 10))
+    context = {'good_review' : attraction.positive_review, 'bad_review' : attraction.negative_review}
+
+    return HttpResponse(json.dumps(context), content_type="application/json")"""  # 무엇을 누룰때 어떤것이 나오는지를 설정하는것, 무엇은 정확히..
