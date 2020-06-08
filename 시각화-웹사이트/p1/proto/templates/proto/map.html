@@ -80,28 +80,40 @@
 			
 			{% for Attraction in attractions_list %}
 			var label_{{ Attraction.pk }} = labelIndex++;
+			
+			
+			var infowindow{{ Attraction.pk }} = new google.maps.InfoWindow({
+				content: "{{ Attraction.name }}"
+            });
+			
+			
 			var marker{{ Attraction.pk }} = new google.maps.Marker({
 				position: {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}},
 				label: labels[label_{{ Attraction.pk }} % labels.length],
 				map: map
 			});
 			marker{{ Attraction.pk }}.setMap(map);
-			
+
 			marker{{ Attraction.pk }}.addListener('click', function() {
 				marker{{ Attraction.pk }}.setAnimation(google.maps.Animation.BOUNCE);
 				setTimeout(function(){
 				marker{{ Attraction.pk }}.setAnimation(null);
 				}, 1000)
 				
+				infowindow{{ Attraction.pk }}.open(map, marker{{ Attraction.pk }});
+				
+				setTimeout(function(){
+					infowindow{{ Attraction.pk }}.close();
+				}, 10000)
+				
+
 				let pk = {{ Attraction.pk }};
 				let name = "{{Attraction.name}}";
 				hideshow(pk, labels[label_{{ Attraction.pk }} % labels.length], true);
-				
 			});
-			
 			{% endfor %}
 		}
-	
+
 
 		function placeMarkerAndPanTo(new_attraction) {
 
