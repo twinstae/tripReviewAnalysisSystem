@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 	body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 	.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -61,9 +60,6 @@
             <p class="w3-xlarge" id='request'>{{ request.path }}</p>
 			<div id="like_button_container"></div>
         </header>
-				<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-				<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-				<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
         {% block content %}
             <div class="w3-main w3-content w3-padding"  style="max-width:1200px;margin-top:100px">
@@ -84,5 +80,4 @@
         {% endblock content %}
     {% endwith %}
 	{% load static %}
-	<script src="{% static "js/like_button.js" %}" type="text/babel"></script>
 </body>

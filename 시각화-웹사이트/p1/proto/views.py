@@ -9,8 +9,8 @@ import json
 import pandas as pd
 
 #url = "C:/Users/taehee/Documents/GitHub/tripReviewAnalysisSystem/시각화-웹사이트/p1/static/proto/static/distance0~176.csv"
-url = r"C:\Users\Jeong\Documents\GitHub\tripReviewAnalysisSystem\시각화-웹사이트\p1\static\proto\static\distance0~176.csv"
-dist_df = pd.read_csv(url)
+#url = r"C:\Users\Jeong\Documents\GitHub\tripReviewAnalysisSystem\시각화-웹사이트\p1\static\proto\static\distance0~176.csv"
+#dist_df = pd.read_csv(url)
 
 class HomeView(generic.TemplateView):
     template_name = 'proto/home.html'
@@ -52,6 +52,7 @@ def new_r(request):
     Attractions = Attraction.objects.filter(pk__in=end_name_list)
     
     #파이썬 객체를 dictionary로 만듭니다. 워드클라우드는 이미지라 json으로 못 만들어서 버렸습니다.
+    #pk... ???
     attractions = [model_to_dict(attraction, fields = ["name","latitude","longitude"]) for attraction in Attractions]
     
     assert len(attractions) > 1 

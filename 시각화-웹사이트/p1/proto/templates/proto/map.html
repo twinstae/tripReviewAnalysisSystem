@@ -1,88 +1,113 @@
 {% extends 'proto/home.html' %}
 
 {% block specific-style %}
-
+<script src="https://kit.fontawesome.com/1484502b16.js" crossorigin="anonymous"></script>
 {% endblock specific-style %}
 
 {% block title %} TARS Map {% endblock title%}
 
 {% block content %}
-
-    <div id="map" style = "height: 800px"></div>
-
-    {% for Attraction in attractions_list %}
-    <div class = "Card">
-	<div class="w3-quarter w3-card" id = "{{ Attraction.pk }}">
-		{% load static %}
-		<img src="{% static "image/"|add:Attraction.name|add:".jpg" %}" alt="title" style="width:100%">
-		<h3>{{Attraction.name}}</h3>
-		<span class="w3-round-xxlarge w3-tag" style = "background-color:#fff0b3; color:#ff9900;">star</span>
-		<span class="w3-round-xxlarge w3-tag w3-color"> tag_name </span>
-		<div class="button_container"></div>
+	<div id ="guide01" style="position: fixed;  top: 100px;  left: 50px; z-index:9">
+		<div class="w3-card w3-animate-left" style="width:350px">
+		<header class="w3-container w3-blue"> 
+        <span onclick="document.getElementById('guide01').style.display='none'" 
+        class="w3-button w3-display-bottomright">close</span>
+        <h2>Welcome to SEOUL!</h2>
+		<h4>the capital of South Korea<h4>
+		  </header>
+		  <div class="w3-container w3-white">
+			<p>TARS help you plan the trip with the BigData. We analyze more than 60000 reviews of real travelers in TripAdvisor. </p>
+			<p>You can just...</p>
+			<ul class="w3-ul">
+				<li class="w3-bar w3-hover-blue">
+					<span class="w3-bar-item"><i class ="fas fa-map-marker-alt"></i>Click the attraction Markers.</span>
+				</li>
+				<li class="w3-bar w3-hover-blue">
+					<span class="w3-bar-item"><i class ="fas fa-file"></i>Read their Cards.<span>
+					<span class="w3-bar-item"> We summarize a lot of reviews into just one card, with TextMining Tech</span>
+				</li>
+				<li class="w3-bar w3-hover-blue">
+					<span class="w3-bar-item"><i class ="fas fa-check"></i>Choose the Attraction which you want to go!<span>
+				</li>				
+				<li class="w3-bar w3-hover-blue">
+					<span class="w3-bar-item"><i class ="fas fa-sync"></i>Then we recommend you next attractions only for you.</span>
+				</li>				
+			</ul>
+		  </div>
+		
+		</div>
 	</div>
-	{% endfor %}
-
-    <script>
-		var select_data = ['abc','이건가'];
-
+    <div id="map" style = "height: 800px;" class="w3-twothird"></div>    
+	<div class = "w3-third w3-center w3-padding">
 		{% for Attraction in attractions_list %}
-		var popup{{ Attraction.pk }}, Popup{{ Attraction.pk }};
+		<div id="{{Attraction.pk}}" style="max-width: 200px;" class = "w3-col w3-hide w3-margin"></div>
 		{% endfor %}
+	</div>
+	
+	<div id ="guide">
+	</div>
+	
+    <script>
+		var map;
+		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		var labelIndex = 0;
 
+		function hideshow(pk, label, isHide) {
+			var x = document.getElementById(pk);
+			if (x.className.indexOf("w3-show") == -1 && isHide) {
+				x.className += " w3-show";
+				var labelElement = document.createElement("SPAN");   // Create a <button> element
+				labelElement.innerHTML = label;                   // Insert text
+				x.appendChild(labelElement)
+				setTimeout(function(){
+				labelElement.remove();
+				x.className = x.className.replace(" w3-show", "");
+				},
+				15000);				
+			} else{
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}	
+	  
         function initMap() {
 			var directionsService = new google.maps.DirectionsService();
 			var directionsRenderer = new google.maps.DirectionsRenderer();
 			map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: 37.612085, lng: 127.00825},
+			center: {lat: 37.592085, lng: 126.90000},
 			zoom:12
 			});
 			directionsRenderer.setMap(map);
+			
 			{% for Attraction in attractions_list %}
-
-			var AttrPosition = {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}};
-
+			var label_{{ Attraction.pk }} = labelIndex++;
 			var marker{{ Attraction.pk }} = new google.maps.Marker({
-				position: AttrPosition,
+				position: {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}},
+				label: labels[label_{{ Attraction.pk }} % labels.length],
 				map: map
 			});
 			marker{{ Attraction.pk }}.setMap(map);
-
+			
 			marker{{ Attraction.pk }}.addListener('click', function() {
-				popup()
-
-				let name = "{{Attraction.name}}";
+				marker{{ Attraction.pk }}.setAnimation(google.maps.Animation.BOUNCE);
+				setTimeout(function(){
+				marker{{ Attraction.pk }}.setAnimation(null);
+				}, 1000)
+				
 				let pk = {{ Attraction.pk }};
-				$.ajax({
-				  type: "POST",
-				  url: "{% url 'new_r' %}",
-				  data: {'pk':pk, 'name': name ,'csrfmiddlewaretoken': '{{ csrf_token }}'},
-				  dataType: "json",
-				  success: function(response){
-					// 배열이 아니면 에러 출력
-					console.assert(Array.isArray(response), {errorMsg: "response is not an Array of Attraction"});
-
-					response.forEach(function(attraciton){
-						// name이나 latitude가 누락되면 에러 출력
-						console.assert(attraction.hasOwnProperty('name'),attraciton)
-						console.assert(attraction.hasOwnProperty('latitude'),attraciton)
-
-						placeMarkerAndPanTo(attraciton);
-					});
-				  }
-				});
+				let name = "{{Attraction.name}}";
+				hideshow(pk, labels[label_{{ Attraction.pk }} % labels.length], true);
+				
 			});
-
-			marker{{ Attraction.pk }}.addListener('mouseout', function(){
-				setTimeout(function(){ popup{{ Attraction.pk }}.setMap(null); }, 10000);
-			});
-
+			
 			{% endfor %}
 		}
+	
 
 		function placeMarkerAndPanTo(new_attraction) {
 
 			var marker = new google.maps.Marker({
 				position: {lat: new_attraction.latitude, lng: new_attraction.longitude},
+				label: labels[labelIndex++ % labels.length],
 				map: map
 				});
 
@@ -104,12 +129,34 @@
 				}
 			  });
 		}
+		
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4&callback=initMap"
     async defer></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  {% load static %}
-  <script src="{% static "js/Card.js" %}" type="text/babel"></script>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	
+	{% load static %}
+	<script src="{% static "js/Card.js" %}" type="text/babel"></script>
+	{% for Attraction in attractions_list %}
+	<script type="text/babel">		
+
+	ReactDOM.render(
+		<Card url= "{% url 'new_r' %}"
+		csrf = "{{ csrf_token }}"
+		attraction = {{
+		  pk: {{Attraction.pk}},
+		  name: "{{Attraction.name}}",
+		  {% load static %}
+		  img_src: "../static/image/{{Attraction.name}}.jpg"
+		}}/>
+		,
+		document.getElementById({{Attraction.pk}})
+	);
+	</script>
+	{% endfor %}
   
 {% endblock content %}
