@@ -58,8 +58,12 @@
         <!-- Header -->
         <header class="w3-container w3-blue w3-center" style="padding:128px 16px">
             <h1 class="w3-margin w3-jumbo">{% block title %} Home {% endblock title %}</h1>
-            <p class="w3-xlarge">{{ request.path }}</p>
+            <p class="w3-xlarge" id='request'>{{ request.path }}</p>
+			<div id="like_button_container"></div>
         </header>
+				<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+				<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+				<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
         {% block content %}
             <div class="w3-main w3-content w3-padding"  style="max-width:1200px;margin-top:100px">
@@ -79,4 +83,6 @@
             </div>
         {% endblock content %}
     {% endwith %}
+	{% load static %}
+	<script src="{% static "js/like_button.js" %}" type="text/babel"></script>
 </body>

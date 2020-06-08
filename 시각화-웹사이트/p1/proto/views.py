@@ -8,9 +8,6 @@ import json
 
 import pandas as pd
 
-url = "C:/Users/taehee/Documents/GitHub/tripReviewAnalysisSystem/시각화-웹사이트/p1/static/proto/static/distance0~176.csv"
-dist_df = pd.read_csv(url)
-
 class HomeView(generic.TemplateView):
     template_name = 'proto/home.html'
 

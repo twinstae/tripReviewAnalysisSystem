@@ -1,63 +1,30 @@
 {% extends 'proto/home.html' %}
 
 {% block specific-style %}
-	.popup-bubble {
-        /* Position the bubble centred-above its parent. */
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -100%);
-        /* Style the bubble. */
-        background-color: white;
-        padding: 5px;
-        border-radius: 5px;
-        font-family: sans-serif;
-        overflow-y: auto;
-        max-height: 500px;
-        box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
-      }
-      /* The parent of the bubble. A zero-height div at the top of the tip. */
-    .popup-bubble-anchor {
-        /* Position the div a fixed distance above the tip. */
-        position: absolute;
-        width: 100%;
-        bottom: 0px;
-        left: 0;
-      }
-      /* JavaScript will position this div at the bottom of the popup tip. */
-    .popup-container {
-        cursor: auto;
-        height: 0;
-        position: absolute;
-        /* The max width of the info window. */
-        width: 900px;
-      }   
+
 {% endblock specific-style %}
 
 {% block title %} TARS Map {% endblock title%}
 
 {% block content %}
 
-	<div id="like_button_container"></div>
-
     <div id="map" style = "height: 800px"></div>
-	
+
     {% for Attraction in attractions_list %}
+    <div class = "Card">
 	<div class="w3-quarter w3-card" id = "{{ Attraction.pk }}">
 		{% load static %}
-		<img src="{% static "proto/static/"|add:Attraction.name|add:".jpg" %}" alt="title" style="width:100%">
+		<img src="{% static "image/"|add:Attraction.name|add:".jpg" %}" alt="title" style="width:100%">
 		<h3>{{Attraction.name}}</h3>
 		<span class="w3-round-xxlarge w3-tag" style = "background-color:#fff0b3; color:#ff9900;">star</span>
 		<span class="w3-round-xxlarge w3-tag w3-color"> tag_name </span>
-        <div class="site_boxes"></div>
-        <div class="site_boxes"></div>
-        <div class="site_boxes"></div>
+		<div class="button_container"></div>
 	</div>
 	{% endfor %}
-    
+
     <script>
 		var select_data = ['abc','이건가'];
-		
+
 		{% for Attraction in attractions_list %}
 		var popup{{ Attraction.pk }}, Popup{{ Attraction.pk }};
 		{% endfor %}
@@ -71,24 +38,18 @@
 			});
 			directionsRenderer.setMap(map);
 			{% for Attraction in attractions_list %}
-			
+
 			var AttrPosition = {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}};
-			
+
 			var marker{{ Attraction.pk }} = new google.maps.Marker({
 				position: AttrPosition,
 				map: map
 			});
 			marker{{ Attraction.pk }}.setMap(map);
-			
-			Popup = createPopupClass();
-			popup{{ Attraction.pk }} = new Popup(
-				new google.maps.LatLng({{ Attraction.latitude }}, {{ Attraction.longitude }}),
-				document.getElementById({{ Attraction.pk }})
-			);
-			
+
 			marker{{ Attraction.pk }}.addListener('click', function() {
-				popup{{ Attraction.pk }}.setMap(map);
-				
+				popup()
+
 				let name = "{{Attraction.name}}";
 				let pk = {{ Attraction.pk }};
 				$.ajax({
@@ -99,35 +60,36 @@
 				  success: function(response){
 					// 배열이 아니면 에러 출력
 					console.assert(Array.isArray(response), {errorMsg: "response is not an Array of Attraction"});
-					
-					response.forEach(function(element){
-						console.log(element)
-						placeMarkerAndPanTo(element);
+
+					response.forEach(function(attraciton){
+						// name이나 latitude가 누락되면 에러 출력
+						console.assert(attraction.hasOwnProperty('name'),attraciton)
+						console.assert(attraction.hasOwnProperty('latitude'),attraciton)
+
+						placeMarkerAndPanTo(attraciton);
 					});
 				  }
-				});	
+				});
 			});
-			
-			marker{{ Attraction.pk }}.addListener('mouseout', function(){ 
+
+			marker{{ Attraction.pk }}.addListener('mouseout', function(){
 				setTimeout(function(){ popup{{ Attraction.pk }}.setMap(null); }, 10000);
 			});
-			
+
 			{% endfor %}
 		}
-        
+
 		function placeMarkerAndPanTo(new_attraction) {
-		
-			console.assert(typeof new_attraction.latitude == typeof 37.5923, "latitude is not float" + String(new_attraction.latitude))
-			
+
 			var marker = new google.maps.Marker({
 				position: {lat: new_attraction.latitude, lng: new_attraction.longitude},
 				map: map
 				});
-			
+
 			map.panTo({lat: new_attraction.latitude, lng: new_attraction.longitude})
 		}
-		
-		function calcRoute(startAttraction, endAttraction, directionsService, directionsRenderer) {		  
+
+		function calcRoute(startAttraction, endAttraction, directionsService, directionsRenderer) {
 			  start = new google.maps.LatLng(startAttraction['latitude'], startAttraction['longitude']);
 			  end = new google.maps.LatLng(endAttraction['latitude'], endAttraction['longitude']);
 			  var request = {
@@ -142,68 +104,12 @@
 				}
 			  });
 		}
-		
-        function createPopupClass() {
-            function Popup(position, content) {
-                this.position = position;
-
-                content.classList.add('popup-bubble');
-
-                // This zero-height div is positioned at the bottom of the bubble.
-                var bubbleAnchor = document.createElement('div');
-                bubbleAnchor.classList.add('popup-bubble-anchor');
-                bubbleAnchor.appendChild(content);
-
-                // This zero-height div is positioned at the bottom of the tip.
-                this.containerDiv = document.createElement('div');
-                this.containerDiv.classList.add('popup-container');
-                this.containerDiv.appendChild(bubbleAnchor);
-
-                // Optionally stop clicks, etc., from bubbling up to the map.
-                google.maps.OverlayView.preventMapHitsAndGesturesFrom(this.containerDiv);
-            }
-                // ES5 magic to extend google.maps.OverlayView.
-                Popup.prototype = Object.create(google.maps.OverlayView.prototype);
-
-                /** Called when the popup is added to the map. */
-                Popup.prototype.onAdd = function() {
-                    this.getPanes().floatPane.appendChild(this.containerDiv);
-                };
-
-                /** Called when the popup is removed from the map. */
-                Popup.prototype.onRemove = function() {
-                    if (this.containerDiv.parentElement) {
-                      this.containerDiv.parentElement.removeChild(this.containerDiv);
-                    }
-                };
-
-                    /** Called each frame when the popup needs to draw itself. */
-                Popup.prototype.draw = function() {
-                    var divPosition = this.getProjection().fromLatLngToDivPixel(this.position);
-
-                    // Hide the popup when it is far out of view.
-                    var display =
-                        Math.abs(divPosition.x) < 4000 && Math.abs(divPosition.y) < 4000 ?
-                        'block' :
-                        'none';
-
-                    if (display === 'block') {
-                      this.containerDiv.style.left = divPosition.x + 'px';
-                      this.containerDiv.style.top = divPosition.y + 'px';
-                    }
-                    if (this.containerDiv.style.display !== display) {
-                      this.containerDiv.style.display = display;
-                    }
-                };
-
-            return Popup;
-        }
     </script>
-    
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4&callback=initMap"
     async defer></script>
-	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	
-
+  {% load static %}
+  <script src="{% static "js/Card.js" %}" type="text/babel"></script>
+  
 {% endblock content %}

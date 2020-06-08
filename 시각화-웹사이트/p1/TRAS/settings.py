@@ -130,5 +130,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), # Root의 static 파일
-    '/proto/static/',	# proto App의 static 파일
 )

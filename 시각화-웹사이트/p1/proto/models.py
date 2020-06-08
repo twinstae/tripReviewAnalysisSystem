@@ -17,7 +17,7 @@ class Attraction(models.Model):
     address = models.CharField(max_length=100, null=True)
     latitude = models.FloatField(null=True)
     longitude = models.FloatField(null=True)
-    wordcloud = models.ImageField(blank=True, upload_to = "../static/proto/static")
+    wordcloud = models.ImageField(blank=True, upload_to = "../static/image")
     
     def __str__(self):
         return self.name
