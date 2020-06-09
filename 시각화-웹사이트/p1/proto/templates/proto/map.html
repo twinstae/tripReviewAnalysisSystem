@@ -45,7 +45,7 @@
 		</div>
 	</div>
     <div id="map" style = "height: 800px;" class="w3-twothird"></div>    
-	<div class = "w3-third w3-center w3-padding" id="card-window">
+	<div class = "w3-third w3-left w3-padding" id="card-window">
 		{% for Attraction in attractions_list %}
 		
 		  <div id="{{Attraction.pk}}" class = "w3-margin-small w3-hide"></div>
@@ -61,7 +61,9 @@
 			var c = cardWindow.children;
 			var pk = new_attraction.pk;
 			var name = new_attraction.fields.name;
-			var static_url = "../static/image/"+name+".jpg"
+			var static_url = "../static/image/"+name+".jpg";
+			var star_info = JSON.parse(new_attraction.fields.star_info);
+			var review_sample = JSON.parse(new_attraction.fields.review_sample);
 			
 			var node = document.createElement("DIV");
 			node.setAttribute('id', pk);
@@ -74,7 +76,9 @@
 				attraction = {{
 				  pk: pk,
 				  name: name,
-				  img_src: static_url
+				  img_src: static_url,
+				  star_info: star_info,
+				  review_sample: review_sample
 				}}/>
 				,  document.getElementById(new_attraction.pk)
 			);
@@ -93,7 +97,7 @@
 				setTimeout(function(){
 				x.className = x.className.replace(" w3-show", "");
 				},
-				15000);				
+				30000);				
 			} else{
 				x.className = x.className.replace(" w3-show", "");
 			}
@@ -205,6 +209,13 @@
 	<script src="{% static "js/Card.js" %}" type="text/babel"></script>
 	{% for Attraction in attractions_list %}
 	<script type="text/babel">		
+	var star_string{{Attraction.pk}} = "{{Attraction.star_info}}".split("&quot;").join('"');
+	console.log(star_string{{Attraction.pk}});
+	var star_info{{Attraction.pk}} = JSON.parse(star_string{{Attraction.pk}});
+	
+	var sample_string{{Attraction.pk}} = "{{Attraction.review_sample}}".split("&quot;").join('"');
+	console.log(sample_string{{Attraction.pk}});
+	var review_sample{{Attraction.pk}} = JSON.parse(sample_string{{Attraction.pk}});
 	
 	ReactDOM.render(
 		<Card url= "{% url 'new_r' %}"
@@ -213,7 +224,9 @@
 		  pk: {{Attraction.pk}},
 		  name: "{{Attraction.name}}",
 		  {% load static %}
-		  img_src: "../static/image/{{Attraction.name}}.jpg"
+		  img_src: "../static/image/{{Attraction.name}}.jpg",
+		  star_info: star_info{{Attraction.pk}},
+		  review_sample: review_sample{{Attraction.pk}}
 		}}/>
 		,
 		document.getElementById({{Attraction.pk}})

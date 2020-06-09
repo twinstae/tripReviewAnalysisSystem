@@ -1,6 +1,5 @@
 var modalVisible = true
 
-  
 function Card(props) {
 	
   function selected(){
@@ -36,33 +35,67 @@ function Card(props) {
 	  }
 	});
   }
-  return (
-	<div style={{width:"200px", maxHeight:"350px"}}>
-		<div className="w3-round-large w3-white w3-card">
+  
+  var negSample = props.attraction.review_sample.neg;
+  var posSample = props.attraction.review_sample.pos;
+  
+  const star = props.attraction.star_info;
+  console.log(star);
+  if (star != null){
+	var star_1 = star[1].toString()+"%";
+	const star_2 = star[2].toString()+"%";
+	const star_3 = star[3].toString()+"%";
+	const star_4 = star[4].toString()+"%";
+	var string_4 = "★"
+	const value_5 = 100-star[1]-star[2]-star[3]-star[4];
+	const star_5 = value_5.toString()+"%";
+	var string_5 = "avg:" + props.attraction.star_info.avg.toString();
+	if (value_5 < 30){
+		string_4 = string_5;
+		string_5 = "★";
+	  }
+	console.log(star_5);
+	
+	return (
+		<div className="w3-round-large w3-white w3-card w3-dropdown-hover w3-center"  style={{width:"200px", maxHeight:"350px"}}>
 			<img src={props.attraction.img_src} alt="title" style={{width:"100%"}} className="w3-round-large"/>
 			<h4>{props.attraction.name}</h4>
 			<div>
-				<div className="w3-col" style={{width:'3%',
+				<div className="w3-col" style={{width: star_1,
 				backgroundColor:'#ff6666',
 				color:"#ff0000"}}>.</div>
-				<div className="w3-col" style={{width:'5%',
+				<div className="w3-col" style={{width: star_2,
 				backgroundColor:'#ff9966',
 				color:'#ffcc66'}}>.</div>
-				<div className="w3-col" style={{width:'20%',
+				<div className="w3-col" style={{width: star_3,
 				backgroundColor:'#fff0b3',
 				color:'#ffdb4d'}}>★</div>
-				<div className="w3-col" style={{width:'32%',
+				<div className="w3-col" style={{width: star_4,
 				backgroundColor:'#ffcc66',
-				color:'#fff0b3'}}>★</div>
-				<div className="w3-col" style={{width:'40%',
+				color:'#fff0b3'}}>{string_4}</div>
+				<div className="w3-col" style={{width: star_5,
 				backgroundColor:'#ffdb4d',
-				color:'#ff9900'}}>avg : 4.5</div>
+				color:'#ff9900'}}>{string_5}</div>
 			</div>
 			<span className="w3-round-xxlarge w3-tag w3-blue w3-margin-small w3-small"> tag_name </span>	
 			<br />
 			<button onClick={selected} className="w3-margin-small w3-tag w3-round-large w3-blue"> SELECT </button>			
+			<div className="w3-dropdown-content" style = {{top: "-5px",
+left: "125%", width:"300px"}}>
+			<span className="w3-round-xxlarge w3-tag w3-margin-small w3-small" style={{backgroundColor:'#ffdb4d',
+				color:'#ff9900'}}>Most Positive</span>
+			{posSample.map((sentence, i) => {
+				return (<p> {sentence} </p>)
+			})}
+			<span className="w3-round-xxlarge w3-tag w3-margin-small w3-small w3-red">Most Negative</span>
+			{negSample.map((sentence, i) => {
+				return (<p> {sentence} </p>)
+			})}
+			</div>
 		</div>
-	</div>
-	
-    );
+		
+		);
+  } else {
+	return null
+  }
 }
