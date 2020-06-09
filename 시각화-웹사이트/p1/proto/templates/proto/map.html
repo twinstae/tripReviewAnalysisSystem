@@ -2,6 +2,13 @@
 
 {% block specific-style %}
 <script src="https://kit.fontawesome.com/1484502b16.js" crossorigin="anonymous"></script>
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
 {% endblock specific-style %}
 
 {% block title %} TARS Map {% endblock title%}
@@ -20,14 +27,14 @@
 			<p>You can just...</p>
 			<ul class="w3-ul">
 				<li class="w3-bar w3-hover-blue">
-					<span class="w3-bar-item"><i class ="fas fa-map-marker-alt"></i>Click the attraction Markers.</span>
+					<span class="w3-bar-item"><span class="fas fa-map-marker-alt"> </span>Click the attraction Markers.</span>
 				</li>
 				<li class="w3-bar w3-hover-blue">
-					<span class="w3-bar-item"><i class ="fas fa-file"></i>Read their Cards.<span>
+					<span class="w3-bar-item"><i class ="fas fa-file"></i>Read their Cards.</span>
 					<span class="w3-bar-item"> We summarize a lot of reviews into just one card, with TextMining Tech</span>
 				</li>
 				<li class="w3-bar w3-hover-blue">
-					<span class="w3-bar-item"><i class ="fas fa-check"></i>Choose the Attraction which you want to go!<span>
+					<span class="w3-bar-item"><i class ="fas fa-check"></i>Choose the Attraction which you want to go!</span>
 				</li>				
 				<li class="w3-bar w3-hover-blue">
 					<span class="w3-bar-item"><i class ="fas fa-sync"></i>Then we recommend you next attractions only for you.</span>
@@ -38,29 +45,52 @@
 		</div>
 	</div>
     <div id="map" style = "height: 800px;" class="w3-twothird"></div>    
-	<div class = "w3-third w3-center w3-padding">
+	<div class = "w3-third w3-center w3-padding" id="card-window">
 		{% for Attraction in attractions_list %}
-		<div id="{{Attraction.pk}}" style="max-width: 200px;" class = "w3-col w3-hide w3-margin"></div>
+		
+		  <div id="{{Attraction.pk}}" class = "w3-margin-small w3-hide"></div>
+		
 		{% endfor %}
+
 	</div>
 	
-	<div id ="guide">
-	</div>
+    <script type="text/babel">
+		function makeCard(new_attraction){
+			const cardWindow = document.getElementById('card-window');
+			
+			var c = cardWindow.children;
+			var pk = new_attraction.pk;
+			var name = new_attraction.fields.name;
+			var static_url = "../static/image/"+name+".jpg"
+			
+			var node = document.createElement("DIV");
+			node.setAttribute('id', pk);
+			node.setAttribute('class',"w3-margin-small w3-hide");
+			cardWindow.appendChild(node);
+			
+			ReactDOM.render(
+				<Card url= "{% url 'new_r' %}"
+				csrf = "{{ csrf_token }}"
+				attraction = {{
+				  pk: pk,
+				  name: name,
+				  img_src: static_url
+				}}/>
+				,  document.getElementById(new_attraction.pk)
+			);
+		}
 	
-    <script>
+	</script>
+	<script>
 		var map;
 		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		var labelIndex = 0;
 
-		function hideshow(pk, label, isHide) {
+		function hideshow(pk, isHide) {
 			var x = document.getElementById(pk);
 			if (x.className.indexOf("w3-show") == -1 && isHide) {
 				x.className += " w3-show";
-				var labelElement = document.createElement("SPAN");   // Create a <button> element
-				labelElement.innerHTML = label;                   // Insert text
-				x.appendChild(labelElement)
 				setTimeout(function(){
-				labelElement.remove();
 				x.className = x.className.replace(" w3-show", "");
 				},
 				15000);				
@@ -109,37 +139,57 @@
 
 				let pk = {{ Attraction.pk }};
 				let name = "{{Attraction.name}}";
-				hideshow(pk, labels[label_{{ Attraction.pk }} % labels.length], true);
+				hideshow(pk, true);
 			});
 			{% endfor %}
 		}
 
 
-		function placeMarkerAndPanTo(new_attraction) {
-
+		function placeMarker(new_attraction) {
+		
+			var latlng = new google.maps.LatLng(new_attraction.fields.latitude, new_attraction.fields.longitude);
+			
 			var marker = new google.maps.Marker({
-				position: {lat: new_attraction.latitude, lng: new_attraction.longitude},
+				position: latlng,
 				label: labels[labelIndex++ % labels.length],
 				map: map
 				});
+			console.log("I made Marker!");
+			var infowindow = new google.maps.InfoWindow({
+				content: new_attraction.fields.name
+            });			
+			
+			marker.addListener('click', function() {
+				marker.setAnimation(google.maps.Animation.BOUNCE);
+				setTimeout(function(){
+					marker.setAnimation(null);
+				}, 1000)
+				
+				infowindow.open(map, marker);
+				
+				setTimeout(function(){
+					infowindow.close();
+				}, 10000)
 
-			map.panTo({lat: new_attraction.latitude, lng: new_attraction.longitude})
+				let pk = new_attraction.pk;
+				hideshow(pk, true);
+			});
 		}
 
 		function calcRoute(startAttraction, endAttraction, directionsService, directionsRenderer) {
-			  start = new google.maps.LatLng(startAttraction['latitude'], startAttraction['longitude']);
-			  end = new google.maps.LatLng(endAttraction['latitude'], endAttraction['longitude']);
-			  var request = {
+			start = new google.maps.LatLng(startAttraction['latitude'], startAttraction['longitude']);
+			end = new google.maps.LatLng(endAttraction['latitude'], endAttraction['longitude']);
+			var request = {
 				origin: start,
 				destination: end,
 				travelMode: 'TRANSIT'
-			  };
-			  directionsService.route(request, function(result, status) {
-				if (status == 'OK') {
-				  console.log(result);
-				  directionsRenderer.setDirections(result);
-				}
-			  });
+			};
+			directionsService.route(request, function(result, status) {
+			if (status == 'OK') {
+			  console.log(result);
+			  directionsRenderer.setDirections(result);
+			}
+			});
 		}
 		
     </script>
@@ -155,7 +205,7 @@
 	<script src="{% static "js/Card.js" %}" type="text/babel"></script>
 	{% for Attraction in attractions_list %}
 	<script type="text/babel">		
-
+	
 	ReactDOM.render(
 		<Card url= "{% url 'new_r' %}"
 		csrf = "{{ csrf_token }}"
@@ -170,5 +220,4 @@
 	);
 	</script>
 	{% endfor %}
-  
 {% endblock content %}
