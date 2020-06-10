@@ -58,15 +58,15 @@ def new_r(request):
             
     Attractions = Attraction.objects.filter(pk__in=end_name_list)
     
-<<<<<<< HEAD
+
     #파이썬 객체를 dictionary로 만듭니다. 워드클라우드는 이미지라 json으로 못 만들어서 버렸습니다.
     attractions = [model_to_dict(attraction, fields = ["id","name","latitude","longitude"]) for attraction in Attractions] #id 추가
     
     assert len(attractions) > 1 
     context = json.dumps(attractions)
-=======
+
     attractions = serialize('json', Attractions, cls=LazyEncoder)  
->>>>>>> ddeecc76e3ff588904789cd64516059c0e24d630
+
     
     # json 값을 확인하고 싶다...
     
