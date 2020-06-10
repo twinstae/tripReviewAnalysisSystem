@@ -17,6 +17,8 @@ class Attraction(models.Model):
     address = models.CharField(max_length=100, null=True)
     latitude = models.FloatField(null=True)
     longitude = models.FloatField(null=True)
+    star_info = models.CharField(max_length=100, null=True)
+    review_sample = models.CharField(max_length=1500, null=True)
     wordcloud = models.ImageField(blank=True, upload_to = "../static/image")
     
     def __str__(self):

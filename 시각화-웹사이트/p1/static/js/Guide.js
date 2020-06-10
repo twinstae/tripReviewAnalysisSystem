@@ -11,7 +11,7 @@ class Guide extends React.Component {
   render() {
 
     return (
-		<Card an_attraction={}> </Card>
+		
     	);
   }
 }

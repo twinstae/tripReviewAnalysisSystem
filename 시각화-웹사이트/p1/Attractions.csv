@@ -1,0 +1,180 @@
+,id,name,big_sort,small_sort,address,latitude,longitude,star_info,wordcloud
+0,1,Gyeongbokgung Palace,Sights & Landmarks,,"161 Sajik-ro, Jongno-gu, Seoul South Korea",37.5773616,126.976684,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB138D0>
+1,2,Bukhansan National Park,Nature & Parks,,"262, Bogungmun-ro, Seongbuk-gu, Seoul 02700 South Korea",37.612085,127.00825,,
+2,3,Myeongdong Shopping Street,Sights & Landmarks,,nan,37.5640907,126.99794,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB137B8>
+3,4,Changdeokgung Palace,Sights & Landmarks,,"99, Yulgok-ro, Jongno-gu, Seoul 03072 South Korea",37.5800952,126.991849,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB13D30>
+4,5,The War Memorial of Korea,Museums,,"29, Itaewon-ro, Yongsan-gu, Seoul 04353 South Korea",37.5362151,126.977762,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB13588>
+5,6,National Museum of Korea,Museums,,"137 Seobinggo-ro, Yongsan-gu, Seoul 04383 South Korea",37.5246635,126.977727,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB13470>
+6,7,Insadong,Sights & Landmarks,,"Insa-dong, Jongno-gu, Seoul South Korea",37.5716555,126.986232,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0AFD0>
+7,8,Trickeye Museum Seoul,Museums,,"20, Hongik-ro 3-gil, Mapo-gu Seogyo Plaza B2, Seoul 04039 South Korea",37.5534532,126.921683,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0ADA0>
+8,9,Lotte World Tower & Mall,Sights & Landmarks,,"300, Olympic-ro, Songpa-gu 117-123F, Lotte World Tower, Seoul 05551 South Korea",37.5129907,127.102732,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0AB70>
+9,10,KTX (Korea Train Express),Transportation,,nan,37.566535,126.977969,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0A940>
+10,11,Seoul Metro,Transportation,,nan,37.566535,126.977969,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0A710>
+11,12,Hangang Park,Nature & Parks,,Seoul South Korea,37.566535,126.977969,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0A4E0>
+12,13,N Seoul Tower,Sights & Landmarks,,"105, Namsangongwon-gil, Yongsan-gu, Seoul 04340 South Korea",37.5509473,126.989296,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB0A2B0>
+13,14,Namsan Park,Nature & Parks,,nan,37.5511694,126.988226,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2588>
+14,15,Myeongdong NANTA Theater,Concerts & Shows,,nan,37.5635611,126.983684,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA29E8>
+15,16,Cheonggyecheon Stream,Nature & Parks,,Seoul South Korea,37.566535,126.977969,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2EB8>
+16,17,Jogyesa Temple,Sights & Landmarks,,"45 Gyeonji-dong, Jongno-gu, Seoul 110-170 South Korea",37.5743716,126.982649,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2240>
+17,18,Bongeunsa Temple,Sights & Landmarks,,"73 Samseong-dong, Gangnam-gu, Seoul 135-090 South Korea",37.5139716,127.050029,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2F28>
+18,19,Haneul Park,Nature & Parks,,nan,37.5674467,126.88545,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA20B8>
+19,20,Bukchon Hanok Village,Sights & Landmarks,,nan,37.5824075,126.983653,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2518>
+20,21,Hongik University Street,Sights & Landmarks,,"Seogyo-dong, Seoul South Korea",37.5534897,126.91773,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2B70>
+21,22,Ewha Womans University,Sights & Landmarks,,nan,37.5642551,126.950307,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2710>
+22,23,Dongdaemun Design Plaza (DDP),Sights & Landmarks,,nan,37.5667521,127.010104,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2CC0>
+23,24,Starfield Library,Traveler Resources,,"513, Yeongdong-daero, Gangnam-gu Starfield COEX Mall, Seoul 06164 South Korea",37.51168500000001,127.059339,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAA2048>
+24,25,Kwangjang Market,Sights & Landmarks,,"88, Changgyeonggung-ro, Jongno-gu, Seoul 03195 South Korea",37.5700398,126.999603,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x199473BC8D0>
+25,26,Love Museum,Museums,,"20, Hongik-ro 3-gil, Mapo-gu B1 Seogyo Plaza, Seoul 04039 South Korea",37.553478,126.92164,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB08F28>
+26,27,Seoul Forest,Nature & Parks,,nan,37.54316439999999,127.041854,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB08CF8>
+27,28,Yeouido Hangang Park,Nature & Parks,,nan,37.5263086,126.933582,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB08AC8>
+28,29,Leeum Samsung Museum of Art,Museums,,nan,37.5383951,126.99926,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB08898>
+29,30,Seoul Sky,Sights & Landmarks,,"300, Olympic-ro, Songpa-gu Lotte World Tower 117-123F, Seoul 05551 South Korea",37.5129907,127.102732,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB08668>
+30,31,Doota,Shopping,,nan,37.5691357,127.00907,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB08438>
+31,32,apm Place,Shopping,,nan,37.5652675,127.008417,,
+32,33,Korea University,Sights & Landmarks,,nan,37.5900117,127.031858,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB13B00>
+33,34,Bugaksan Seoul Fortress,Sights & Landmarks,,nan,37.5729503,126.979357,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB02E80>
+34,35,Korean Postage Stamp Museum,Museums,,nan,37.5615577,126.982136,,
+35,36,Star Avenue at Lotte World,Water & Amusement Parks,,nan,37.5112348,127.098027,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB02D68>
+36,37,Migliore Dongdaemun Shop,Shopping,,nan,37.568063,127.008477,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB02A20>
+37,38,Lotte Young Plaza Myeongdong,Shopping,,nan,37.5634661,126.981506,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB02908>
+38,39,D Museum,Museums,,nan,37.5370296,127.01141,,
+39,40,Yongsan Family Park,Nature & Parks,,nan,37.5216852,126.98397,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB026D8>
+40,41,Gilsangsa Shrine,Sights & Landmarks,,nan,37.5991321,126.994265,,
+41,42,Statue of Gangnam Style,Sights & Landmarks,,nan,37.51168500000001,127.059339,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB02390>
+42,43,Shinsegae Gangnam,Shopping,,nan,37.5041299,127.003069,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB02160>
+43,44,Dongdaemun Gate (Heunginjimun),Sights & Landmarks,,nan,37.5711295,127.009687,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87710>
+44,45,I-Park Mall,Shopping,,nan,37.5288539,126.964044,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87978>
+45,46,National Hangeul Museum,Museums,,nan,37.5238506,126.98047,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87F98>
+46,47,Kwanghee Fasion Mall,Shopping,,nan,37.5686956,127.011812,,
+47,48,Tourist Information Center of Korea Tourism Organization,Traveler Resources,,nan,37.5684894,126.981613,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87FD0>
+48,49,Hongik University,Sights & Landmarks,,nan,37.55097689999999,126.9257,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87438>
+49,50,Seoul Museum of Art,Museums,,nan,37.5642629,126.974675,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A874E0>
+50,51,Dream Forest,Nature & Parks,,nan,37.6214313,127.040624,,
+51,52,Jeongdong Observatory,Sights & Landmarks,,nan,37.5642629,126.974675,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87668>
+52,53,The Story of King Sejong & The Story of Admiral Yi Sunshin,Museums,,nan,37.5721241,126.976084,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A874A8>
+53,54,Seoul National Cemetery,Sights & Landmarks,,nan,37.4996897,126.978509,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87470>
+54,55,Seoul Plaza,Sights & Landmarks,,nan,37.5679872,126.977163,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x19949A87780>
+55,56,Ttukseom Hangang Park,Nature & Parks,,nan,37.5353233,127.064188,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC160>
+56,57,Seven Luck Casino Gangbuk Hilton,Casinos & Gambling,,nan,37.5554538,126.975433,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC128>
+57,58,Unhyeongung,Sights & Landmarks,,nan,37.5761402,126.986973,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFCEF0>
+58,59,Eungbongsan Mountain,Nature & Parks,,nan,37.5633415,127.037102,,
+59,60,Mecenatpolis Mall,Shopping,,nan,,,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFCCC0>
+60,61,Ansan Jarak-gil,Outdoor Activities,,nan,37.5712845,126.946106,,
+61,62,Seoul City Wall Museum,Museums,,nan,37.57238220000001,127.008865,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC978>
+62,63,Myeongdong Underground Shopping Center,Shopping,,nan,37.5608222,126.985355,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC748>
+63,64,Ice Gallery,Shopping,,nan,37.5792971,126.982531,,
+64,65,Kukkiwon World Taekwondo Headquarters,Museums,,nan,37.5022555,127.0303,,
+65,66,Culture Station Seoul 284,Sights & Landmarks,,"1, Tongil-ro, Jung-gu, Seoul 04509 South Korea",37.5560186,126.972102,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC630>
+66,67,KBS On,Sights & Landmarks,,nan,37.5255823,126.916458,,
+67,68,An Jung-geun Memorial Hall,Museums,,nan,37.55384069999999,126.980506,,
+68,69,Sebitseom,Nature & Parks,,"683, Olympic-daero, Seocho-gu, Seoul 06500 South Korea",37.4900549,127.000764,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC400>
+69,70,Gyeongui line forest,Nature & Parks,,nan,37.5560304,126.928439,,
+70,71,Amore Pacific Museum of Art,Museums,,nan,37.5488847,126.972702,,
+71,72,Baek In-je's House,Sights & Landmarks,,nan,37.580642,126.984066,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAFC1D0>
+72,73,Jeoldusan Martyrs' Shrine,Museums,,nan,37.5444056,126.911624,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7CF8>
+73,74,Yangjae Citizens' Park,Nature & Parks,,nan,37.4712172,127.036735,,
+74,75,L’atelier,Museums,,"20, Jangchungdan-ro 13-gil, Jung-gu 11F, Hyundai City Tower, Seoul 04563 South Korea",37.5686986,127.007666,,
+75,76,Dongdaemun Seonggwak Park,Nature & Parks,,nan,37.57238220000001,127.008865,,
+76,77,Seocho Tourist Information Center,Traveler Resources,,"1318-7, Seocho-dong, Seocho-gu, Seoul South Korea",37.4982493,127.027015,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7DD8>
+77,78,Paradise Casino Walkerhill,Casinos & Gambling,,nan,37.5555968,127.111231,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7B38>
+78,79,Mario outlet,Shopping,,nan,37.47867129999999,126.886496,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7AC8>
+79,80,Daelim Museum,Museums,,nan,37.5774587,126.973341,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7A58>
+80,81,Naksan Public Art,Sights & Landmarks,,nan,37.5806571,127.007483,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF79E8>
+81,82,Seoul Folk Flea Market,Shopping,,nan,37.5730037,127.025614,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7978>
+82,83,Seodaemun Museum of Natural History,Museums,,nan,37.5767,126.93783,,
+83,84,Dosan Neighborhood Park,Nature & Parks,,nan,37.5239121,127.035591,,
+84,85,Tapgol Park,Nature & Parks,,"Jongno 2-ga, Jongno-gu, Seoul South Korea",37.5701735,126.98565,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7908>
+85,86,Lotte FitIn,Shopping,,nan,37.56572,127.007047,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7898>
+86,87,Seven Luck Casino Gangnam Coex,Casinos & Gambling,,nan,37.5101935,127.058582,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7828>
+87,88,Gyeonghuigung Palace,Sights & Landmarks,,nan,37.5712378,126.968168,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF77B8>
+88,89,Figure Museum,Museums,,nan,37.5257613,127.040373,,
+89,90,Children’s Museum of National Museum of Korea,Museums,,nan,,,,
+90,91,Deoksugung,Sights & Landmarks,,"99 Sejong-daero, Jung-gu, Seoul 04519 South Korea",37.5658705,126.975007,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7748>
+91,92,Yeouido Park,Nature & Parks,,nan,37.5268082,126.922322,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF76D8>
+92,93,Olympic Park,Nature & Parks,,nan,37.5217853,127.11652,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7668>
+93,94,Myeong-dong Cathedral,Sights & Landmarks,,nan,37.5632533,126.986832,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF75F8>
+94,95,Seoul Children's Grand Park,Water & Amusement Parks,,"216 Neungdong-ro, Gwangjin-gu, Seoul 04991 South Korea",37.549363,127.081812,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7588>
+95,96,Lotte World Aquarium,Nature & Parks,,nan,37.5129907,127.102732,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7518>
+96,97,Gwanghwamun Gate,Sights & Landmarks,,"161 Sajik-ro, Jongno-gu, Seoul 03045 South Korea",37.5773616,126.976684,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF74A8>
+97,98,National Folk Museum of Korea,Museums,,"37 Samcheong-ro, Jongno-gu, Seoul 03045 South Korea",37.5794588,126.978721,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7438>
+98,99,Changgyeonggung Palace,Sights & Landmarks,,nan,37.5787708,126.994869,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF73C8>
+99,100,Starfield COEX Mall,Shopping,,"513, Yeongdong-daero, Gangnam-gu, Seoul 06164 South Korea",37.5101935,127.058582,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7358>
+100,101,Jamsil Baseball Stadium,Fun & Games,,nan,37.5140929,127.074953,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF72E8>
+101,102,Coex Aquarium,Zoos & Aquariums,,"524, Bongeunsa-ro, Gangnam-gu B1 Coex Mall, Seoul 06164 South Korea",37.51168500000001,127.059339,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7278>
+102,103,Grevin Museum,Museums,,"23, Eulji-ro, Jung-gu station la plus proche : Euljiro 1-ga, Seoul 04523 South Korea",37.5662404,126.980362,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7208>
+103,104,Seodaemun Prison History Hall,Museums,,nan,37.591121,126.942115,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7198>
+104,105,Seoul Lantern Festival,Events,,"Cheonggyecheon Stream, Seoul South Korea",37.5713521,127.024627,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7128>
+105,106,Namsangol Hanok Village,Sights & Landmarks,,nan,37.5588388,126.994072,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF70B8>
+106,107,Namdaemun Market,Shopping,,"21, Namdaemunsijang 4-gil, Jung-gu, Seoul 04529 South Korea",37.55914730000001,126.97764,,
+107,108,Korea House,nan,,nan,37.5602041,126.994719,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7048>
+108,109,Itaewon,Sights & Landmarks,,nan,37.5400456,126.992101,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7F60>
+109,110,Samcheongdong-gil Road,Sights & Landmarks,,nan,37.5848379,126.981913,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAF7E48>
+110,111,Garosu-gil,Sights & Landmarks,,"Shinsa-dong, Gangnam-gu, Seoul South Korea",37.524124,127.02288,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1CC0>
+111,112,Naksan Park,Nature & Parks,,nan,37.5808755,127.005163,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1C88>
+112,113,Shinsegae Dept. Store Main,Shopping,,"77, Toegye-ro, Jung-gu, Seoul 04530 South Korea",37.5603075,126.98083,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1C18>
+113,114,Lotte World,Water & Amusement Parks,,"240, Olympic-ro, Songpa-gu, Seoul 138-721 South Korea",37.5112348,127.098027,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1BA8>
+114,115,Inwangsan Mountain,Nature & Parks,,nan,37.5729503,126.979357,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1B38>
+115,116,Majang Meat Market,Shopping,,nan,37.5703062,127.039982,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1AC8>
+116,117,Seoul Museum of History,Museums,,nan,37.5700566,126.970531,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1A58>
+117,118,Seoul City Wall,Sights & Landmarks,,nan,37.5779633,127.008445,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE19E8>
+118,119,Ikseon-dong Hanok Street,Sights & Landmarks,,nan,37.5742793,126.98983,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1978>
+119,120,Jongmyo Shrine,Sights & Landmarks,,"157, Jong-ro, Jongno-gu, Seoul 03135 South Korea",,,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1908>
+120,121,GOTO Mall,Shopping,,nan,37.5062378,127.005037,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1898>
+121,122,National Museum of Modern and Contemporary Art Seoul,Museums,,"30, Samcheong-ro, Jongno-gu, Seoul 03062 South Korea",37.5794091,126.980369,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1828>
+122,123,Seokchon Lake,Nature & Parks,,nan,37.5092404,127.099154,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE17B8>
+123,124,National Palace Museum of Korea,Museums,,nan,37.5773616,126.976684,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1748>
+124,125,Hongdae Art Market Free Market,Shopping,,"19-3, Wausan-ro 21-gil, Mapo-gu, Seoul 04041 South Korea",37.5521432,126.922971,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE16D8>
+125,126,Poopoo Land,Museums,,nan,37.5719364,126.984221,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1668>
+126,127,Jungbu Market,Shopping,,nan,37.5648174,127.00071,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE15F8>
+127,128,Seoullo 7017,Nature & Parks,,nan,37.5591786,126.977669,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1588>
+128,129,Seoul World Cup Stadium,Sights & Landmarks,,nan,37.5666459,126.904384,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1518>
+129,130,Seoul City Hall,Sights & Landmarks,,nan,37.5663797,126.977715,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE14A8>
+130,131,Seolleung & Jeongneung Royal Tomb,Sights & Landmarks,,nan,37.5073294,127.047152,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1438>
+131,132,Gwanghwamun Square,Sights & Landmarks,,nan,37.571619,126.97675,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE13C8>
+132,133,Times Square Mall,Shopping,,"Seoul-si Yeongdeungpo-gu Yeongdeungpodong4-ga 441-10, Seoul South Korea",37.5263715,126.896228,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1358>
+133,134,Lotte Department Store Main,Shopping,,"81, Namdaemun-ro, Jung-gu, Seoul 04533 South Korea",37.5649903,126.98136,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE12E8>
+134,135,Seoul Central Mosque,Sights & Landmarks,,nan,37.532065,126.997104,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1278>
+135,136,Samcheonggak,Sights & Landmarks,,"3, Daesagwan-ro, Seongbuk-gu, Seoul 02822 South Korea",37.5970377,126.984121,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1208>
+136,137,63 City,Sights & Landmarks,,nan,37.5194647,126.939832,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1198>
+137,138,Dongdaemun History & Culture Park,Nature & Parks,,nan,37.5642629,126.974675,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1128>
+138,139,Stylenanda Pink Hotel Flagship Store,Shopping,,nan,37.5618983,126.98528,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE10B8>
+139,141,Alive Museum Insadong,Museums,,"12, Insadong-gil, Jongno-gu Daeil Bldg. B1F & B2F, Seoul 03163 South Korea",37.5718407,126.987208,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1048>
+140,142,Seoul International Fireworks Festival,Events,,"330 Yeouidong-ro,Yeongdeungpo-gu Yeouido Hangang Park, Seoul 07337 South Korea",37.5284017,126.934301,,
+141,143,Ihwa Mural Village,Sights & Landmarks,,nan,37.5769232,127.0043,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1F28>
+142,144,Sinchon,Sights & Landmarks,,nan,37.566535,126.977969,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB13240>
+143,145,Dongdaemun Shopping Complex,Shopping,,"289-3 Jongno 6-ga, Jongno-gu, Seoul South Korea",37.5704151,127.008951,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1EF0>
+144,146,Statue of Sejong the Great,Sights & Landmarks,,nan,37.5725254,126.975642,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1E48>
+145,147,Arario Museum in Space,Museums,,"83, Yulgok-ro, Jongno-gu, Seoul 03058 South Korea",37.5775971,126.988432,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1E80>
+146,148,Seoul Arts Center,Museums,,nan,37.4786094,127.011306,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AAE1E10>
+147,149,Noryangjin Fisheries Wholesale Market,Shopping,,nan,37.5144828,126.93702,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31550>
+148,150,Gocheok Sky Dome,Sights & Landmarks,,nan,37.4984887,126.860153,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB315F8>
+149,151,Seoul Botanical Garden,Nature & Parks,,nan,37.5677844,126.826685,,
+150,152,Mangwon Market,Shopping,,nan,37.5562048,126.9056,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31F60>
+151,153,National Museum of Korean Contemporary History,Museums,,nan,37.5738329,126.97811,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31C18>
+152,154,Express Bus Terminal Shopping Center,Shopping,,nan,37.5054942,127.00671,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31B00>
+153,155,Kyunghee University Seoul Campus,Sights & Landmarks,,nan,37.5953632,127.052761,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB318D0>
+154,156,Common Ground,Shopping,,nan,37.5408693,127.066013,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB316A0>
+155,157,Yongma Land,Water & Amusement Parks,,nan,37.5958179,127.103245,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31470>
+156,158,IFC Mall,Shopping,,nan,37.5249367,126.925284,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31240>
+157,159,SRT,Transportation,,nan,37.566535,126.977969,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31748>
+158,160,Statue of Admiral Yi Sun-Sin,Sights & Landmarks,,nan,37.5725254,126.975642,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31780>
+159,161,Korea Furniture Museum,Museums,,nan,37.6001521,126.993426,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31828>
+160,162,Lotte World Folk Museum,Museums,,nan,37.5112348,127.098027,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31978>
+161,163,Lotte Outlets Seoul Station,Shopping,,nan,37.555042,126.969533,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB319B0>
+162,164,Garak Market,Shopping,,nan,37.492994,127.11232,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31A58>
+163,165,Seoul Daehangno,Sights & Landmarks,,nan,37.586755,127.000355,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31BA8>
+164,166,Grilled Fish Street in Dongdaemun Market,Sights & Landmarks,,nan,37.5729503,126.979357,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31BE0>
+165,167,Namsan Cable Car,Transportation,nan,nan,37.5584157,126.98056,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31C88>
+166,168,The War and Women's Human Rights Museum,Museums,,nan,37.5600537,126.914847,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31DD8>
+167,169,Hongdae NANTA Theatre,Concerts & Shows,,nan,37.5530872,126.921119,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31E10>
+168,170,Cheongwadae Sarangchae,Museums,,nan,37.5729503,126.979357,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB31EB8>
+169,171,D-Cube City,Shopping,,"662, Gyeongin-ro, Guro-gu, Seoul 08209 South Korea",37.5084321,126.888733,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36EF0>
+170,172,Seonyudo Park,Nature & Parks,,nan,37.543569,126.899715,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36DD8>
+171,173,The Blue House (Cheong Wa Dae),Sights & Landmarks,,"1 Cheongwadae-ro, Jongno-gu, Seoul 110-820 South Korea",37.586652,126.97677,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36BA8>
+172,174,Jeongdong Theater,Concerts & Shows,,"43 Jeongdong-gil, Jung-gu, Seoul 04518 South Korea",37.5659672,126.972859,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36978>
+173,175,Ewha Woman's University,Sights & Landmarks,,nan,37.5606558,126.946579,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36748>
+174,176,Sungnyemun Gate,Sights & Landmarks,,nan,37.55994159999999,126.975304,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36518>
+175,177,Hyundai Department Store Apgujeong Main,Shopping,,nan,37.5273268,127.027426,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB362E8>
+176,178,Banpodaegyo Bridge,Sights & Landmarks,,nan,37.5125507,126.998013,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB360B8>
+177,179,COEX Center,Sights & Landmarks,,nan,37.51168500000001,127.059339,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36080>
+178,180,Museum Kimchikan,Museums,,"35-4, Insadong-gil, Jongno-gu 4~6F, Insadong Maru Building, Seoul 03149 South Korea",,,,<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=500x500 at 0x1994AB36128>
