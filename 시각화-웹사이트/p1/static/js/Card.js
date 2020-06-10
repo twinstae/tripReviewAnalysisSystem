@@ -3,13 +3,23 @@ var modalVisible = true
 function Card(props) {
 	
   function selected(){
+	  
+	  coordinates.push(props.attraction.latlng)
+	  
+	  selectedAttractions.push(props.attraction.pk);
+	  
+	  var json_data = JSON.stringify(selectedAttractions);
+	  //localStorage.setItem('selectedAttractions', json_data);
+	  
 	  $.ajax({
 	  type: "POST",
 	  url: props.url,
-	  data: {'pk':props.attraction.pk, 'name': props.attraction.name ,'csrfmiddlewaretoken': props.csrf},
+	  data: {'pk':props.attraction.pk, 'list': json_data ,'csrfmiddlewaretoken': props.csrf},
 	  dataType: "json",
 	  success: function(response){
 		// 배열이 아니면 에러 출력
+		var newList = selectedAttractions
+		
 		console.assert(Array.isArray(response), {errorMsg: "response is not an Array of Attraction"});
 		console.log(response)
 		response.forEach(function(attraction){
@@ -17,6 +27,7 @@ function Card(props) {
 			console.assert(attraction.fields.hasOwnProperty('name'), attraction)
 			console.assert(attraction.fields.hasOwnProperty('latitude'), attraction)
 			var pk = attraction.pk;
+			newList.push(pk)
 			const cardWindow = document.getElementById('card-window');
 			var c = cardWindow.children;
 			var isid = false;
@@ -27,11 +38,12 @@ function Card(props) {
 				}
 			}
 			if (isid != true){
-				makeCard(attraction)
+				makeCard(attraction);
 				placeMarker(attraction);
 			}
-
 		});
+		rerenderMarkers(newList);
+		console.log(selectedAttractions)
 	  }
 	});
   }
@@ -40,7 +52,6 @@ function Card(props) {
   var posSample = props.attraction.review_sample.pos;
   
   const star = props.attraction.star_info;
-  console.log(star);
   if (star != null){
 	var star_1 = star[1].toString()+"%";
 	const star_2 = star[2].toString()+"%";
@@ -54,7 +65,6 @@ function Card(props) {
 		string_4 = string_5;
 		string_5 = "★";
 	  }
-	console.log(star_5);
 	
 	return (
 		<div className="w3-round-large w3-white w3-card w3-dropdown-hover w3-center"  style={{width:"200px", maxHeight:"350px"}}>
