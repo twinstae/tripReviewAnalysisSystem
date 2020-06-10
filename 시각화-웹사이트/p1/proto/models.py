@@ -25,6 +25,14 @@ class Attraction(models.Model):
     def __str__(self):
         return self.name
 
+class Route(models.Model):
+    start_pk = models.ForeignKey(Attraction, on_delete=models.CASCADE)
+    end_pk = models.PositiveIntegerField()
+    dist = models.PositiveIntegerField(null=True)
+    direction = models.CharField(max_length=1500, null=True)
+    
+    def __str__(self):
+        return str(self.start.name) + " : " + str(self.end.name)
 
 class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
