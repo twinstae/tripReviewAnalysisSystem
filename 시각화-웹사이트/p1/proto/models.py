@@ -19,11 +19,20 @@ class Attraction(models.Model):
     longitude = models.FloatField(null=True)
     star_info = models.CharField(max_length=100, null=True)
     review_sample = models.CharField(max_length=1500, null=True)
+    cluster = models.PositiveSmallIntegerField(null = True)
     wordcloud = models.ImageField(blank=True, upload_to = "../static/image")
     
     def __str__(self):
         return self.name
 
+class Route(models.Model):
+    start_pk = models.ForeignKey(Attraction, on_delete=models.CASCADE)
+    end_pk = models.PositiveIntegerField()
+    dist = models.PositiveIntegerField(null=True)
+    direction = models.CharField(max_length=1500, null=True)
+    
+    def __str__(self):
+        return str(self.start.name) + " : " + str(self.end.name)
 
 class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)

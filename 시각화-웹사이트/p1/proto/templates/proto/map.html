@@ -54,7 +54,7 @@
 
 	</div>
 	
-    <script type="text/babel">
+    <script type="text/babel">		
 		function makeCard(new_attraction){
 			const cardWindow = document.getElementById('card-window');
 			
@@ -64,7 +64,7 @@
 			var static_url = "../static/image/"+name+".jpg";
 			var star_info = JSON.parse(new_attraction.fields.star_info);
 			var review_sample = JSON.parse(new_attraction.fields.review_sample);
-			
+			var latlng = {lat: new_attraction.fields.latitude ,lng:new_attraction.fields.longitude}
 			var node = document.createElement("DIV");
 			node.setAttribute('id', pk);
 			node.setAttribute('class',"w3-margin-small w3-hide");
@@ -78,9 +78,10 @@
 				  name: name,
 				  img_src: static_url,
 				  star_info: star_info,
-				  review_sample: review_sample
+				  review_sample: review_sample,
+				  latlng: latlng
 				}}/>
-				,  document.getElementById(new_attraction.pk)
+				, document.getElementById(new_attraction.pk)
 			);
 		}
 	
@@ -89,6 +90,41 @@
 		var map;
 		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		var labelIndex = 0;
+		let path;
+		var markers = {};
+		var infowindows = {};
+		var coordinates = [];
+		var selectedAttractions = [];
+
+		function rerenderMarkers(newList){
+			const cardWindow = document.getElementById('card-window');
+			var c = cardWindow.children;
+			var i;
+			for (i = 0; i < c.length; i++) {
+				markers[c[i].id].setMap(null)
+			}
+			if (path != null){
+				path.setMap(null);
+			}
+			
+			labelIndex = 0
+			newList.forEach(function(new_pk){
+				markers[new_pk].label = labels[labelIndex++ % labels.length]
+				markers[new_pk].setMap(map);
+			})
+			console.log(coordinates);
+			if (coordinates.length > 1){
+				path = new google.maps.Polyline({
+				  path: coordinates,
+				  geodesic: true,
+				  strokeColor: '#FF0000',
+				  strokeOpacity: 1.0,
+				  strokeWeight: 2
+				});
+
+				path.setMap(map);
+			}
+		}
 
 		function hideshow(pk, isHide) {
 			var x = document.getElementById(pk);
@@ -102,7 +138,7 @@
 				x.className = x.className.replace(" w3-show", "");
 			}
 		}	
-	  
+		
         function initMap() {
 			var directionsService = new google.maps.DirectionsService();
 			var directionsRenderer = new google.maps.DirectionsRenderer();
@@ -114,18 +150,21 @@
 			
 			{% for Attraction in attractions_list %}
 			var label_{{ Attraction.pk }} = labelIndex++;
-			
-			
+						
 			var infowindow{{ Attraction.pk }} = new google.maps.InfoWindow({
 				content: "{{ Attraction.name }}"
             });
 			
+			infowindows[{{ Attraction.pk }}] = infowindow{{ Attraction.pk }};
 			
 			var marker{{ Attraction.pk }} = new google.maps.Marker({
 				position: {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}},
 				label: labels[label_{{ Attraction.pk }} % labels.length],
 				map: map
 			});
+			
+			markers[{{ Attraction.pk }}] = marker{{ Attraction.pk }};
+			
 			marker{{ Attraction.pk }}.setMap(map);
 
 			marker{{ Attraction.pk }}.addListener('click', function() {
@@ -140,14 +179,12 @@
 					infowindow{{ Attraction.pk }}.close();
 				}, 10000)
 				
-
 				let pk = {{ Attraction.pk }};
 				let name = "{{Attraction.name}}";
 				hideshow(pk, true);
 			});
 			{% endfor %}
 		}
-
 
 		function placeMarker(new_attraction) {
 		
@@ -158,10 +195,14 @@
 				label: labels[labelIndex++ % labels.length],
 				map: map
 				});
-			console.log("I made Marker!");
+			
+			markers[new_attraction.pk] = marker;
+
 			var infowindow = new google.maps.InfoWindow({
 				content: new_attraction.fields.name
             });			
+			
+			infowindows[new_attraction.pk] = infowindow;
 			
 			marker.addListener('click', function() {
 				marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -190,7 +231,6 @@
 			};
 			directionsService.route(request, function(result, status) {
 			if (status == 'OK') {
-			  console.log(result);
 			  directionsRenderer.setDirections(result);
 			}
 			});
@@ -210,12 +250,11 @@
 	{% for Attraction in attractions_list %}
 	<script type="text/babel">		
 	var star_string{{Attraction.pk}} = "{{Attraction.star_info}}".split("&quot;").join('"');
-	console.log(star_string{{Attraction.pk}});
 	var star_info{{Attraction.pk}} = JSON.parse(star_string{{Attraction.pk}});
 	
 	var sample_string{{Attraction.pk}} = "{{Attraction.review_sample}}".split("&quot;").join('"');
-	console.log(sample_string{{Attraction.pk}});
 	var review_sample{{Attraction.pk}} = JSON.parse(sample_string{{Attraction.pk}});
+	var latlng = {lat: {{Attraction.latitude}},lng:{{Attraction.longitude}}}
 	
 	ReactDOM.render(
 		<Card url= "{% url 'new_r' %}"
@@ -226,7 +265,8 @@
 		  {% load static %}
 		  img_src: "../static/image/{{Attraction.name}}.jpg",
 		  star_info: star_info{{Attraction.pk}},
-		  review_sample: review_sample{{Attraction.pk}}
+		  review_sample: review_sample{{Attraction.pk}},
+		  latlng:latlng
 		}}/>
 		,
 		document.getElementById({{Attraction.pk}})

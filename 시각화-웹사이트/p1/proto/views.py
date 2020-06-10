@@ -17,10 +17,6 @@ class LazyEncoder(DjangoJSONEncoder):
 
 import pandas as pd
 
-#url = "C:/Users/taehee/Documents/GitHub/tripReviewAnalysisSystem/시각화-웹사이트/p1/static/proto/static/distance0~176.csv"
-#url = r"C:\Users\Jeong\Documents\GitHub\tripReviewAnalysisSystem\시각화-웹사이트\p1\static\proto\static\distance0~176.csv"
-#dist_df = pd.read_csv(url)
-
 class HomeView(generic.TemplateView):
     template_name = 'proto/home.html'
 
@@ -50,10 +46,12 @@ class MapView(generic.ListView):
         
         assert len(attractions_list) > 1
         return attractions_list
-        
+
 def new_r(request):
-    name = request.POST.get('name', None)
-    pk = int(request.POST.get('pk', None))
+    raw_list = request.POST.get('list', None)
+    selected_attractions = json.loads(raw_list)
+    raw_pk =request.POST.get('pk', None)
+    pk = int(raw_pk)
     assert type(pk) == type(1), type(pk)
     
     end_name_list = list(range(pk+10,pk+12)) # 임시로 넣은 데이터
