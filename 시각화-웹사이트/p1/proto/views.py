@@ -54,9 +54,9 @@ def new_r(request):
     pk = int(raw_pk)
     assert type(pk) == type(1), type(pk)
     
-    end_name_list = list(range(pk+10,pk+12)) # 임시로 넣은 데이터
+    new_pk_list = list(range(pk+10,pk+12)) # 임시로 넣은 데이터
             
-    Attractions = Attraction.objects.filter(pk__in=end_name_list)
+    Attractions = Attraction.objects.filter(pk__in=new_pk_list)
     
     attractions = serialize('json', Attractions, cls=LazyEncoder)  
     
@@ -65,6 +65,11 @@ def new_r(request):
     #return HttpResponse(json.dumps(context), content_type="application/json")
 
     return HttpResponse(attractions, content_type="application/json")
+
+def recommend(selected_attractions):
+    
+    
+    return 
 
 """def new_r(request):
     pk = request.POST.get('pk', None)
