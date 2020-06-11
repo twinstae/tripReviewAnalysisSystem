@@ -32,7 +32,7 @@ class Route(models.Model):
     direction = models.CharField(max_length=1500, null=True)
     
     def __str__(self):
-        return str(self.start.name) + " : " + str(self.end.name)
+        return str(self.start_pk) + " -> " + str(self.end_pk)
 
 class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
