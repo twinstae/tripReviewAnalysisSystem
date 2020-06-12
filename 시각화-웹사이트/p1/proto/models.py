@@ -38,7 +38,7 @@ class Route(models.Model):
     rating = models.DecimalField(null=True, max_digits=4, decimal_places=2)
     
     def __str__(self):
-        return str(self.end_pk)
+        return str(self.start_pk) + " -> " + str(self.end_pk)
 
 class Review(models.Model):
     attraction = models.ForeignKey(Attraction, on_delete=models.CASCADE)
