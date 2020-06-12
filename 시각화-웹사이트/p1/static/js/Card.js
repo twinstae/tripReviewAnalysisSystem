@@ -1,52 +1,54 @@
 var modalVisible = true
 
 function Card(props) {
-	
-  function selected(){
-	  
-	  coordinates.push(props.attraction.latlng)
-	  
-	  selectedAttractions.push(props.attraction.pk);
-	  
-	  var json_data = JSON.stringify(selectedAttractions);
-	  //localStorage.setItem('selectedAttractions', json_data);
-	  
-	  $.ajax({
-	  type: "POST",
-	  url: props.url,
-	  data: {'pk':props.attraction.pk, 'list': json_data ,'csrfmiddlewaretoken': props.csrf},
-	  dataType: "json",
-	  success: function(response){
-		// 배열이 아니면 에러 출력
-		var newList = selectedAttractions
+  
+	function cardSelected(){
+			  
+		var json_data = JSON.stringify(selectedArray);
+		var start_pk = props.attraction.pk
+		selectedArray.push(start_pk)
+		coordinates.push(props.attraction.latlng)
 		
-		console.assert(Array.isArray(response), {errorMsg: "response is not an Array of Attraction"});
-		console.log(response)
-		response.forEach(function(attraction){
-			// name이나 latitude가 누락되면 에러 출력
-			console.assert(attraction.fields.hasOwnProperty('name'), attraction)
-			console.assert(attraction.fields.hasOwnProperty('latitude'), attraction)
-			var pk = attraction.pk;
-			newList.push(pk)
-			const cardWindow = document.getElementById('card-window');
-			var c = cardWindow.children;
-			var isid = false;
-			var i;
-			for (i = 0; i < c.length; i++) {
-				if (c[i].id == pk){
-					isid = true;
+		$.ajax({
+		type: "POST",
+		url: props.url,
+		data: {'pk':start_pk, 'list': json_data ,'csrfmiddlewaretoken': props.csrf},
+		dataType: "json",
+		success: function(response){
+			// 배열이 아니면 에러 출력
+			
+			console.log(selectedArray);
+			
+			newList = [];
+			
+			response.forEach(function(attraction){
+				// name이나 latitude가 누락되면 에러 출력
+				console.assert(attraction.fields.hasOwnProperty('name'), attraction)
+				console.assert(attraction.fields.hasOwnProperty('latitude'), attraction)
+				var end_pk = attraction.pk;
+				
+				newList.push(end_pk)
+				
+				const cardWindow = document.getElementById('card-window');
+				var c = cardWindow.children;
+				var isid = false;
+				var i;
+				for (i = 0; i < c.length; i++) {
+					if (c[i].id == end_pk){
+						isid = true;
+					}
 				}
-			}
-			if (isid != true){
-				makeCard(attraction);
-				placeMarker(attraction);
-			}
+				if (isid != true){
+					makeCard(attraction);
+					placeMarker(attraction);
+				}
+			});
+			console.assert(newList.length != 0, newList)
+			rerenderMarkers(newList);
+			
+		  }
 		});
-		rerenderMarkers(newList);
-		console.log(selectedAttractions)
-	  }
-	});
-  }
+	}
   
   var negSample = props.attraction.review_sample.neg;
   var posSample = props.attraction.review_sample.pos;
@@ -65,6 +67,7 @@ function Card(props) {
 		string_4 = string_5;
 		string_5 = "★";
 	  }
+	  
 	
 	return (
 		<div className="w3-round-large w3-white w3-card w3-dropdown-hover w3-center"  style={{width:"200px", maxHeight:"350px"}}>
@@ -89,7 +92,7 @@ function Card(props) {
 			</div>
 			<span className="w3-round-xxlarge w3-tag w3-blue w3-margin-small w3-small"> tag_name </span>	
 			<br />
-			<button onClick={selected} className="w3-margin-small w3-tag w3-round-large w3-blue"> SELECT </button>			
+			<button onClick={cardSelected} className="w3-margin-small w3-tag w3-round-large w3-blue"> SELECT </button>			
 			<div className="w3-dropdown-content" style = {{top: "-5px",
 left: "125%", width:"300px"}}>
 			<span className="w3-round-xxlarge w3-tag w3-margin-small w3-small" style={{backgroundColor:'#ffdb4d',

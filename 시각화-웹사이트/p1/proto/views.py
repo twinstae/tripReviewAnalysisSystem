@@ -1,11 +1,15 @@
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
-from proto.models import Attraction
+from proto.models import Attraction, Route
 from django.http import HttpResponse
 from django.forms.models import model_to_dict
 import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.serializers import serialize
+
+import numpy as np
+import pandas as pd
+import json
 
 class LazyEncoder(DjangoJSONEncoder):
     def default(self, obj):
@@ -15,7 +19,6 @@ class LazyEncoder(DjangoJSONEncoder):
 
 # Create your views here.
 
-import pandas as pd
 
 class HomeView(generic.TemplateView):
     template_name = 'proto/home.html'
@@ -54,30 +57,67 @@ def new_r(request):
     pk = int(raw_pk)
     assert type(pk) == type(1), type(pk)
     
-    new_pk_list = list(range(pk+10,pk+12)) # 임시로 넣은 데이터
-            
-    Attractions = Attraction.objects.filter(pk__in=new_pk_list)
-    
+    new_pk_list = recommend(selected_attractions, pk)
 
-    #파이썬 객체를 dictionary로 만듭니다. 워드클라우드는 이미지라 json으로 못 만들어서 버렸습니다.
-    attractions = [model_to_dict(attraction, fields = ["id","name","latitude","longitude"]) for attraction in Attractions] #id 추가
+    Attractions = Attraction.objects.filter(pk__in = new_pk_list)
     
-    assert len(attractions) > 1 
-    context = json.dumps(attractions)
-
     attractions = serialize('json', Attractions, cls=LazyEncoder)  
-
-    
-    # json 값을 확인하고 싶다...
-    
-    #return HttpResponse(json.dumps(context), content_type="application/json")
+    assert len(attractions) > 1 
 
     return HttpResponse(attractions, content_type="application/json")
 
-def recommend(selected_attractions):
+def recommend(selected_attractions, pk):
+
+    candidate_df = distance_r(selected_attractions, pk)
+    candidate_df['star'] = star_r(candidate_df['end_pk']) 
+    candidate_df['rating'] = candidate_df['dist'] * candidate_df['star'] 
     
     
-    return 
+    top_5 = candidate_df.sort_values(by='rating')[-5:]
+    
+    print(top_5)
+    print(top_5.end_pk)
+    print(list(top_5.end_pk))
+    
+    new_pk_list = list(top_5.end_pk) #상위 5개의 end_pk값을 가져온다.
+    
+    return new_pk_list
+    
+def distance_r(selected_attractions, pk):
+
+    candidate_df = pd.DataFrame(np.zeros(shape = (15,3)), columns = ['rating', 'end_pk', 'dist'])
+    start = Attraction.objects.get(pk = pk)
+
+    now_i = 0
+
+    for distance in ['5','15','30']:
+        route_qs = Route.objects.filter(start_pk = start, dist = distance)
+        for route in route_qs.values_list('end_pk', 'dist', named=True):
+            if route.end_pk not in selected_attractions and now_i < 15 :
+                candidate_df.loc[now_i, 'end_pk'] = route.end_pk
+                candidate_df.loc[now_i, 'dist'] = (100 - route.dist) / 100
+                #candidate_df.loc[now_i, 'dist'] = route.rating
+                now_i += 1
+                        
+    return candidate_df
+    
+def star_r(end_pk_series):
+    star_qs = Attraction.objects.filter(pk__in = list(end_pk_series))
+    
+    star_list = []
+    for attr in star_qs:
+        try:
+            star_list.append(json.loads(attr.star_info)['avg'] / 5)
+        except:
+            star_list.append(4 / 5)
+    
+    if len(star_list) != 15:
+        star_list.extend([0]*(15-len(star_list)))
+    
+    return star_list
+    #return Attraction.objects.filter(pk__in = list(end_pk_series)).values_list('star_rating', flat=True)
+    
+    
 
 """def new_r(request):
     pk = request.POST.get('pk', None)

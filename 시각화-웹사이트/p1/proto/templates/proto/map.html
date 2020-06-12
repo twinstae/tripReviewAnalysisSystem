@@ -83,36 +83,47 @@
 				}}/>
 				, document.getElementById(new_attraction.pk)
 			);
-		}
-	
+		}	
 	</script>
 	<script>
-		var map;
-		var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		let map;
+		let labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		var labelIndex = 0;
 		let path;
-		var markers = {};
-		var infowindows = {};
-		var coordinates = [];
-		var selectedAttractions = [];
+		let markers = {};
+		let infowindows = {};
+		let coordinates = [];
+		let selectedArray = [-1];
+		let newList = [];
 
-		function rerenderMarkers(newList){
-			const cardWindow = document.getElementById('card-window');
-			var c = cardWindow.children;
-			var i;
-			for (i = 0; i < c.length; i++) {
-				markers[c[i].id].setMap(null)
+		function rerenderMarkers(nList){
+			
+			for (var key in markers){
+				markers[key].setMap(null);
 			}
+			
 			if (path != null){
 				path.setMap(null);
 			}
 			
-			labelIndex = 0
-			newList.forEach(function(new_pk){
-				markers[new_pk].label = labels[labelIndex++ % labels.length]
-				markers[new_pk].setMap(map);
+			labelIndex = 0;
+		
+			selectedArray.forEach(function(new_pk){
+				if (new_pk in markers){
+					markers[new_pk].set('label', labels[labelIndex % labels.length]);
+					markers[new_pk].setMap(map);
+					labelIndex++;
+				}
 			})
-			console.log(coordinates);
+			
+			nList.forEach(function(new_pk){
+				if (new_pk in markers){
+					markers[new_pk].set('label', labels[labelIndex % labels.length]);
+					markers[new_pk].setMap(map);
+					labelIndex++;
+				}
+			})
+			
 			if (coordinates.length > 1){
 				path = new google.maps.Polyline({
 				  path: coordinates,
@@ -192,7 +203,6 @@
 			
 			var marker = new google.maps.Marker({
 				position: latlng,
-				label: labels[labelIndex++ % labels.length],
 				map: map
 				});
 			
@@ -234,8 +244,7 @@
 			  directionsRenderer.setDirections(result);
 			}
 			});
-		}
-		
+		}	
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4&callback=initMap"
@@ -246,7 +255,7 @@
 	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 	
 	{% load static %}
-	<script src="{% static "js/Card.js" %}" type="text/babel"></script>
+	<script src='../static/js/Card.js' type="text/babel"></script>
 	{% for Attraction in attractions_list %}
 	<script type="text/babel">		
 	var star_string{{Attraction.pk}} = "{{Attraction.star_info}}".split("&quot;").join('"');
