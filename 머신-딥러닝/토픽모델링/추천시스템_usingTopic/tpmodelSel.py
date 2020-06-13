@@ -19,7 +19,15 @@ def append_tags():
         tags = input("select tags: ")
         if tags == "":
             break
-        tag_sel.append(tags)
+        elif tags == "1":
+            tags_mean = "shopping"
+        elif tags == "2":
+            tags_mean = "walking"
+        elif tags == "3":
+            tags_mean = "touring"
+        else:
+            break
+        tag_sel.append(tags_mean)
 
     return tag_sel
 #메인문
@@ -36,7 +44,7 @@ if __name__ == '__main__':
                 print(k, v)
                 tags = append_tags()
                 df["tags"][n] = tags
-                n+=1
+                n += 1
 
 
     print(df)
