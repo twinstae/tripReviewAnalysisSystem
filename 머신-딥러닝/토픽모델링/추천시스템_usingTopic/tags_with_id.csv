@@ -1,0 +1,180 @@
+,names,words,tags,id
+0,63 City.csv,"['view', 'seoul', 'go', 'citi', 'art', 'aquarium', 'build', 'visit', 'floor']","['walking', 'touring']",137
+1,Alive Museum Insadong.csv,"['place', 'go', 'went', 'fun', 'take', 'pictur', 'museum', 'aliv', 'lot']","['walking', 'touring']",141
+2,Amore Pacific Museum of Art.csv,[],[],71
+3,An Jung-geun Memorial Hall.csv,[],[],68
+4,Ansan Jarak-gil.csv,"['trail', 'walk', 'ansan', 'mani', 'area', 'like', 'park', 'gil', 'get']",['walking'],61
+5,apm Place.csv,['mall'],['shopping'],32
+6,Arario Museum in Space.csv,"['interest', 'like', 'place', 'art', 'build', 'piec', 'museum', 'modern', 'space']",['touring'],147
+7,Baek In-je's House.csv,"['interest', 'around', 'tour', 'visit', 'home', 'museum', 'hous', 'free', 'bukchon']",['touring'],72
+8,Banpodaegyo Bridge.csv,"['light', 'walk', 'bridg', 'show', 'time', 'bus', 'fountain', 'see']",['walking'],178
+9,Bongeunsa Temple.csv,"['templ', 'place', 'visit', 'buddhist', 'get', 'coex', 'build']",['touring'],18
+10,Bugaksan Seoul Fortress.csv,"['seoul', 'view', 'way', 'walk', 'hike', 'take', 'wall', 'malbawi', 'stop']",['walking'],34
+11,Bukchon Hanok Village.csv,"['walk', 'hous', 'shop', 'villag', 'tradit', 'korean', 'tourist', 'area', 'take']","['walking', 'shopping', 'touring']",20
+12,Bukhansan National Park.csv,"['trail', 'climb', 'walk', 'hike', 'seoul', 'view', 'peak', 'take', 'bus']",['walking'],2
+13,Changdeokgung Palace.csv,"['palac', 'around', 'korean', 'visit', 'place', 'garden', 'tour', 'secret']","['walking', 'touring']",4
+14,Changgyeonggung Palace.csv,"['visit', 'around', 'go', 'palac', 'tour', 'garden', 'place', 'beauti']","['walking', 'touring']",99
+15,Cheonggyecheon Stream.csv,"['place', 'time', 'stream', 'walk', 'citi', 'nice', 'take']",['walking'],16
+16,Cheongwadae Sarangchae.csv,"['interest', 'museum', 'go', 'korea', 'presid', 'cheongwada', 'korean', 'place']",['touring'],170
+17,Children’s Museum of National Museum of Korea.csv,"['kid', 'korean', 'activ', 'museum']",['touring'],90
+18,Coex Aquarium.csv,"['fish', 'tank', 'also', 'aquarium', 'place', 'coex', 'one', 'like']",['touring'],102
+19,COEX Center.csv,"['shop', 'mall', 'aquarium', 'place', 'food', 'center', 'visit', 'one']",['shopping'],179
+20,Common Ground.csv,"['food', 'mani', 'cool', 'shop', 'place', 'contain', 'cloth', 'realli', 'design']",['shopping'],156
+21,Culture Station Seoul 284.csv,"['station', 'architectur', 'look', 'train', 'place', 'seoul', 'build']",['touring'],66
+22,D Museum.csv,"['museum', 'exhibit']",['touring'],39
+23,D-Cube City.csv,"['visit', 'subway', 'station', 'shop', 'mall', 'place', 'hotel', 'floor', 'food']",['shopping'],171
+24,Daelim Museum.csv,"['museum', 'exhibit', 'visit', 'art', 'nice', 'cafe']","['touring', 'walking']",80
+25,Deoksugung.csv,"['guard', 'chang', 'palac', 'visit', 'build', 'tour', 'free', 'around']","['walking', 'touring']",91
+26,Dongdaemun Design Plaza (DDP).csv,"['shop', 'place', 'area', 'around', 'see', 'night', 'build', 'design', 'architectur']","['shopping', 'walking']",23
+27,Dongdaemun Gate (Heunginjimun).csv,"['gate', 'seoul', 'dongdaemun', 'shop', 'area', 'market', 'see', 'take', 'view']","['shopping', 'walking']",44
+28,Dongdaemun History & Culture Park.csv,"['place', 'area', 'shop', 'build', 'dongdaemun', 'design', 'park', 'seoul', 'around']","['shopping', 'walking']",138
+29,Dongdaemun Seonggwak Park.csv,"['dongdaemun', 'park', 'wall', 'view', 'seoul', 'citi']",['walking'],76
+30,Dongdaemun Shopping Complex.csv,"['price', 'like', 'get', 'place', 'good', 'one', 'shop', 'mall', 'dongdaemun']",['shopping'],145
+31,Doota.csv,"['price', 'store', 'korean', 'shop', 'floor', 'good', 'mall', 'doota', 'food']",['shopping'],31
+32,Dosan Neighborhood Park.csv,"['korean', 'nice', 'visit', 'memori', 'park', 'dosan', 'chang']",['walking'],84
+33,Dream Forest.csv,"['park', 'forest', 'seoul', 'locat', 'dream', 'see']",['walking'],51
+34,Eungbongsan Mountain.csv,"['mountain', 'walk', 'seoul', 'river', 'see', 'view', 'top']",['walking'],59
+35,Ewha Woman's University.csv,"['place', 'visit', 'store', 'shop', 'area', 'lot', 'street', 'univers']","['shopping', 'walking']",175
+36,Ewha Womans University.csv,"['shop', 'street', 'cloth', 'univers', 'visit', 'place', 'campus', 'around', 'walk']","['shopping', 'walking']",22
+37,Express Bus Terminal Shopping Center.csv,"['shop', 'cloth', 'price', 'underground', 'bus', 'express', 'place', 'good', 'cheap']",['shopping'],154
+38,Figure Museum.csv,"['figur', 'floor', 'museum']",['touring'],89
+39,Garak Market.csv,"['fish', 'walk', 'fresh', 'market', 'seafood', 'u', 'start', 'shop', 'place']","['shopping', 'walking']",164
+40,Garosu-gil.csv,"['street', 'shop', 'lot', 'place', 'cafe', 'mani', 'restaur']","['shopping', 'walking']",111
+41,Gilsangsa Shrine.csv,"['place', 'one', 'templ', 'walk']",['walking'],41
+42,Gocheok Sky Dome.csv,"['stadium', 'game', 'basebal', 'concert', 'place', 'went', 'seat', 'go', 'see']","['walking', 'touring']",150
+43,GOTO Mall.csv,"['shop', 'mall', 'underground', 'cheap', 'end', 'one', 'cloth', 'place', 'price']",['shopping'],121
+44,Grevin Museum.csv,"['place', 'visit', 'time', 'also', 'like', 'realli', 'wax', 'museum', 'figur']",['touring'],103
+45,Grilled Fish Street in Dongdaemun Market.csv,"['place', 'tri', 'one', 'went', 'dongdaemun', 'alley', 'fish', 'grill', 'order']",['shopping'],166
+46,Gwanghwamun Gate.csv,"['gate', 'palac', 'visit', 'see', 'place', 'korean', 'guard', 'chang', 'ceremoni']","['walking', 'touring']",97
+47,Gwanghwamun Square.csv,"['place', 'visit', 'see', 'statu', 'squar', 'king', 'yi', 'one']","['walking', 'touring']",132
+48,Gyeongbokgung Palace.csv,"['korea', 'gyeongbokgung', 'palac', 'place', 'see', 'guard', 'tradit']",['touring'],1
+49,Gyeonghuigung Palace.csv,"['beauti', 'still', 'around', 'palac', 'visit', 'one', 'seoul', 'museum', 'take']","['walking', 'touring']",88
+50,Gyeongui line forest.csv,"['park', 'hongda', 'picnic', 'around', 'even']",['walking'],70
+51,Haneul Park.csv,"['walk', 'place', 'beauti', 'park', 'view', 'top', 'take', 'grass']",['walking'],19
+52,Hangang Park.csv,"['walk', 'nice', 'enjoy', 'park', 'river', 'seoul', 'place', 'bike', 'night']",['walking'],12
+53,Hongdae Art Market Free Market.csv,"['shop', 'place', 'street', 'visit', 'food', 'go', 'market', 'hongda', 'area']","['shopping', 'walking']",125
+54,Hongdae NANTA Theatre.csv,"['realli', 'korean', 'would', 'show', 'ticket', 'nanta', 'audienc', 'good']",['touring'],169
+55,Hongik University Street.csv,"['place', 'perform', 'lot', 'street', 'restaur', 'univers', 'shop', 'area', 'mani']","['shopping', 'walking']",21
+56,Hongik University.csv,"['shop', 'hongik', 'hongda', 'club', 'place', 'like', 'univers', 'student', 'mani']","['shopping', 'walking']",49
+57,Hyundai Department Store Apgujeong Main.csv,"['store', 'depart', 'end', 'shop', 'food', 'good', 'place', 'brand', 'visit']","['shopping', 'touring']",177
+58,I-Park Mall.csv,"['mall', 'floor', 'thing', 'shop', 'place', 'one', 'good', 'electron', 'price']",['shopping'],45
+59,Ice Gallery.csv,"['slide', 'ice']",['touring'],64
+60,IFC Mall.csv,"['place', 'store', 'also', 'mall', 'visit', 'brand', 'shop', 'food', 'good']",['shopping'],158
+61,Ihwa Mural Village.csv,"['place', 'seoul', 'see', 'mural', 'villag', 'get', 'walk', 'take', 'visit']","['walking', 'touring']",143
+62,Ikseon-dong Hanok Street.csv,"['cafe', 'place', 'hanok', 'nice', 'realli', 'get', 'shop', 'restaur', 'mani']",['walking'],119
+63,Insadong.csv,"['insadong', 'tradit', 'korean', 'shop', 'place', 'souvenir', 'street', 'restaur']","['shopping', 'walking', 'touring']",7
+64,Inwangsan Mountain.csv,"['seoul', 'hike', 'citi', 'mountain', 'view', 'top', 'get', 'take', 'walk']",['walking'],115
+65,Itaewon.csv,"['place', 'seoul', 'itaewon', 'u', 'peopl', 'area', 'shop', 'food']","['shopping', 'walking']",109
+66,Jamsil Baseball Stadium.csv,"['stadium', 'ticket', 'food', 'fan', 'team', 'cheer', 'game', 'basebal', 'fun']",['touring'],101
+67,Jeoldusan Martyrs' Shrine.csv,"['korea', 'easi', 'faith', 'cathol', 'shrine', 'korean', 'place', 'walk', 'church']","['walking', 'touring']",73
+68,Jeongdong Observatory.csv,"['hall', 'floor', 'left', 'view', 'build', 'seoul', 'cafe', 'weekend', 'drink']","['walking', 'touring']",52
+69,Jeongdong Theater.csv,"['show', 'music', 'danc', 'tradit', 'korean', 'stori', 'perform', 'see', 'like']",['touring'],174
+70,Jogyesa Temple.csv,"['templ', 'visit', 'buddha', 'place', 'beauti', 'insid', 'around']","['walking', 'touring']",17
+71,Jongmyo Shrine.csv,"['place', 'visit', 'shrine', 'tour', 'guid', 'english', 'build', 'jongmyo']",['touring'],120
+72,Jungbu Market.csv,"['dri', 'seoul', 'place', 'lot', 'local', 'market', 'fish', 'visit']",['shopping'],127
+73,KBS On.csv,"['place', 'build', 'kb', 'kb', 'free', 'kb']",['touring'],67
+74,Korea Furniture Museum.csv,"['furnitur', 'korean', 'guid', 'museum', 'collect', 'histori', 'tour', 'beauti', 'one']",['touring'],161
+75,Korea House.csv,"['food', 'good', 'realli', 'show', 'dinner', 'tradit', 'korean', 'perform', 'korea']","['shopping', 'touring']",108
+76,Korea University.csv,"['campus', 'also', 'univers', 'good', 'place', 'studi', 'korea']",['touring'],33
+77,Korean Postage Stamp Museum.csv,"['post', 'stamp', 'museum', 'korean', 'place']",['touring'],35
+78,KTX (Korea Train Express).csv,"['ticket', 'korea', 'seat', 'class', 'luggag', 'train', 'seoul', 'ktx']",[],10
+79,Kukkiwon World Taekwondo Headquarters.csv,['show'],['touring'],65
+80,Kwanghee Fasion Mall.csv,[],[],47
+81,Kwangjang Market.csv,"['tri', 'eat', 'pancak', 'market', 'food', 'place', 'korean']",['shopping'],25
+82,Kyunghee University Seoul Campus.csv,"['univers', 'cherri', 'nice', 'build', 'beauti', 'style', 'campus', 'blossom', 'student']",['touring'],155
+83,Leeum Samsung Museum of Art.csv,"['art', 'modern', 'exhibit', 'museum', 'one', 'well', 'visit', 'collect']",['touring'],29
+84,Lotte Department Store Main.csv,"['store', 'lott', 'depart', 'food', 'mall', 'price', 'shop', 'floor', 'brand']",['shopping'],134
+85,Lotte FitIn.csv,"['floor', 'cloth', 'good', 'store', 'tax', 'lott', 'shop', 'mall']",['shopping'],86
+86,Lotte Outlets Seoul Station.csv,"['seoul', 'outlet', 'lott', 'price', 'good', 'lot', 'place', 'korean', 'buy']",['shopping'],163
+87,Lotte World Aquarium.csv,"['aquarium', 'lott', 'world', 'fish', 'see', 'visit', 'beluga', 'whale', 'tank']",['touring'],96
+88,Lotte World Folk Museum.csv,"['museum', 'also', 'ticket', 'miniatur', 'life', 'visit', 'lott', 'world', 'korean']",['touring'],162
+89,Lotte World Tower & Mall.csv,"['tower', 'visit', 'time', 'view', 'floor', 'seoul', 'mall', 'shop', 'lott']",['shopping'],9
+90,Lotte World.csv,"['park', 'fun', 'outdoor', 'lott', 'ride', 'world', 'time', 'go']","['walking', 'touring']",114
+91,Lotte Young Plaza Myeongdong.csv,"['store', 'lott', 'young', 'mall', 'brand', 'cloth', 'shop', 'myeongdong', 'like']",['shopping'],38
+92,Love Museum.csv,"['fun', 'lot', 'go', 'friend', 'funni', 'coupl', 'museum', 'visit', 'place']",['touring'],26
+93,L’atelier.csv,['realli'],[],75
+94,Majang Meat Market.csv,"['meat', 'market', 'get', 'restaur', 'korean', 'beef', 'bbq', 'place']",['shopping'],116
+95,Mangwon Market.csv,"['market', 'local', 'sell', 'food', 'big', 'one', 'area', 'good', 'shop']",['shopping'],152
+96,Mario outlet.csv,"['shop', 'build', 'good', 'mall', 'outlet', 'price', 'brand']",['shopping'],79
+97,Mecenatpolis Mall.csv,"['area', 'place', 'mall', 'shop', 'visit']",['shopping'],60
+98,Migliore Dongdaemun Shop.csv,"['shop', 'seller', 'get', 'price', 'good', 'miglior', 'cloth', 'mall']",['shopping'],37
+99,Museum Kimchikan.csv,"['kimchi', 'museum', 'visit', 'tast', 'room', 'display', 'make', 'type']",['touring'],180
+100,Myeong-dong Cathedral.csv,"['church', 'mass', 'cathol', 'visit', 'cathedr', 'place', 'dong', 'build']",['touring'],94
+101,Myeongdong NANTA Theater.csv,"['fun', 'audienc', 'much', 'show', 'perform', 'time', 'enjoy', 'recommend']",['touring'],15
+102,Myeongdong Shopping Street.csv,"['myeongdong', 'shop', 'street', 'food', 'place']",['shopping'],3
+103,Myeongdong Underground Shopping Center.csv,"['shop', 'underground', 'myeongdong', 'souvenir', 'lot', 'sell', 'cloth', 'kpop', 'mani']",['shopping'],63
+104,N Seoul Tower.csv,"['view', 'citi', 'seoul', 'tower', 'go', 'walk', 'visit']","['walking', 'touring']",13
+105,Naksan Park.csv,"['park', 'view', 'mural', 'citi', 'wall', 'seoul', 'walk', 'villag', 'take']","['walking', 'touring']",112
+106,Naksan Public Art.csv,"['walk', 'see', 'paint', 'place', 'mani', 'mural', 'stair', 'go', 'park']","['walking', 'touring']",81
+107,Namdaemun Market.csv,"['food', 'street', 'market', 'shop', 'place', 'cloth', 'namdaemun', 'good']",['shopping'],107
+108,Namsan Cable Car.csv,"['view', 'take', 'ride', 'walk', 'get', 'way', 'car', 'cabl', 'seoul']","['walking', 'touring']",167
+109,Namsan Park.csv,"['view', 'tower', 'seoul', 'place', 'park', 'good', 'cabl', 'car', 'walk']",['walking'],14
+110,Namsangol Hanok Village.csv,"['villag', 'visit', 'free', 'place', 'tradit', 'korean', 'walk', 'hanok']","['walking', 'touring']",106
+111,National Folk Museum of Korea.csv,"['museum', 'palac', 'time', 'exhibit', 'free', 'korean', 'histori', 'cultur']",['touring'],98
+112,National Hangeul Museum.csv,"['english', 'exhibit', 'also', 'languag', 'interest', 'write', 'museum', 'korean', 'nation']",['touring'],46
+113,National Museum of Korea.csv,"['museum', 'well', 'see', 'visit', 'histori', 'korea', 'exhibit', 'free', 'floor']",['touring'],6
+114,National Museum of Korean Contemporary History.csv,"['korea', 'exhibit', 'modern', 'free', 'good', 'great', 'museum', 'korean', 'histori']",['touring'],153
+115,National Museum of Modern and Contemporary Art Seoul.csv,"['space', 'time', 'art', 'exhibit', 'interest', 'see', 'museum', 'visit']",['touring'],122
+116,National Palace Museum of Korea.csv,"['palac', 'royal', 'gyeongbokgung', 'museum', 'korean', 'free', 'interest', 'english', 'well']",['touring'],124
+117,Noryangjin Fisheries Wholesale Market.csv,"['market', 'fish', 'restaur', 'place', 'experi', 'seafood', 'cook', 'price']",['shopping'],149
+118,Olympic Park.csv,"['park', 'place', 'around', 'olymp', 'see', 'peac', 'seoul']",['walking'],93
+119,Paradise Casino Walkerhill.csv,"['play', 'place', 'get', 'good', 'drink', 'u', 'casino', 'tabl', 'go']",['touring'],78
+120,Poopoo Land.csv,"['kid', 'would', 'visit', 'go', 'get', 'poo', 'place', 'fun', 'poop']",['touring'],126
+121,Samcheongdong-gil Road.csv,"['walk', 'bukchon', 'lot', 'street', 'visit', 'shop', 'place', 'restaur', 'cafe']","['walking', 'shopping']",110
+122,Samcheonggak.csv,"['place', 'shuttl', 'bus', 'food', 'nice', 'seoul', 'restaur', 'korean', 'lunch']","['shopping', 'walking']",136
+123,Sebitseom.csv,"['place', 'island', 'nice', 'visit', 'three', 'view', 'river', 'time', 'also']",['walking'],69
+124,Seocho Tourist Information Center.csv,"['stop', 'gangnam', 'u', 'tradit', 'instrument', 'help', 'tri', 'experi', 'korean']",['touring'],77
+125,Seodaemun Museum of Natural History.csv,"['go', 'natur', 'museum', 'trip', 'kid']",['touring'],83
+126,Seodaemun Prison History Hall.csv,"['histori', 'visit', 'place', 'korean', 'english', 'japanes', 'prison', 'museum']",['touring'],104
+127,Seokchon Lake.csv,"['cherri', 'world', 'visit', 'crowd', 'went', 'festiv', 'lake', 'blossom', 'walk']",['walking'],123
+128,Seolleung & Jeongneung Royal Tomb.csv,"['walk', 'place', 'around', 'visit', 'tomb', 'king', 'site', 'see']","['walking', 'touring']",131
+129,Seonyudo Park.csv,"['island', 'seoul', 'water', 'park', 'great', 'view', 'bridg', 'station', 'seonyudo']",['walking'],172
+130,Seoul Arts Center.csv,"['music', 'concert', 'hall', 'art', 'exhibit', 'seoul', 'great', 'good', 'time']",['touring'],148
+131,Seoul Botanical Garden.csv,"['garden', 'seoul', 'walk', 'visit', 'botan', 'plant']","['walking', 'touring']",151
+132,Seoul Central Mosque.csv,"['prayer', 'area', 'walk', 'halal', 'mosqu', 'find', 'seoul', 'visit']",['touring'],135
+133,Seoul Children's Grand Park.csv,"['place', 'anim', 'see', 'park', 'zoo', 'child', 'ride', 'also', 'kid']",['touring'],95
+134,Seoul City Hall.csv,"['see', 'look', 'walk', 'citi', 'build', 'hall', 'place', 'floor', 'also']","['walking', 'touring']",130
+135,Seoul City Wall Museum.csv,"['exhibit', 'visit', 'floor', 'wall', 'citi', 'gate', 'museum', 'seoul', 'free']",['touring'],62
+136,Seoul City Wall.csv,"['walk', 'view', 'gate', 'wall', 'seoul', 'see', 'citi']","['walking', 'touring']",118
+137,Seoul Daehangno.csv,"['univers', 'food', 'park', 'shop', 'lot', 'theater', 'place', 'restaur', 'area']","['shopping', 'walking', 'touring']",165
+138,Seoul Folk Flea Market.csv,"['cloth', 'find', 'also', 'market', 'antiqu', 'item', 'place', 'shop', 'stuff']",['shopping'],82
+139,Seoul Forest.csv,"['forest', 'seoul', 'walk', 'deer', 'visit', 'enjoy', 'park', 'place', 'great']",['walking'],27
+140,Seoul International Fireworks Festival.csv,"['amaz', 'firework', 'festiv', 'seoul', 'enjoy']",['touring'],142
+141,Seoul Lantern Festival.csv,"['visit', 'stream', 'even', 'lantern', 'festiv', 'seoul', 'beauti', 'walk', 'nice']","['walking', 'touring']",105
+142,Seoul Metro.csv,"['english', 'subway', 'time', 'station', 'train', 'one', 'metro', 'seoul', 'get']",[],11
+143,Seoul Museum of Art.csv,"['museum', 'free', 'interest', 'art', 'seoul', 'visit', 'exhibit', 'korean', 'citi']",['touring'],50
+144,Seoul Museum of History.csv,"['museum', 'citi', 'histori', 'free', 'seoul', 'nice', 'exhibit']",['touring'],117
+145,Seoul National Cemetery.csv,"['cemeteri', 'place', 'nation', 'well', 'peopl', 'go', 'seoul', 'korean', 'visit']",['touring'],54
+146,Seoul Plaza.csv,"['ice', 'skate', 'well', 'seoul', 'plaza', 'citi', 'hotel', 'locat', 'day']",['touring'],55
+147,Seoul Sky.csv,"['see', 'get', 'ticket', 'view', 'seoul', 'tower', 'floor', 'elev', 'build']",['touring'],30
+148,Seoul World Cup Stadium.csv,"['stadium', 'cup', 'world', 'seoul', 'game', 'get', 'place', 'museum', 'match']",['touring'],129
+149,Seoullo 7017.csv,"['plant', 'seoullo', 'nice', 'visit', 'place', 'good', 'seoul', 'walk', 'station']",['walking'],128
+150,Seven Luck Casino Gangbuk Hilton.csv,"['machin', 'player', 'slot', 'food', 'card', 'foreign', 'casino', 'korean', 'place']",['touring'],57
+151,Seven Luck Casino Gangnam Coex.csv,"['casino', 'like', 'place', 'tabl', 'play', 'peopl', 'game', 'go', 'machin']",['touring'],87
+152,Shinsegae Dept. Store Main.csv,"['shinsega', 'go', 'like', 'food', 'floor', 'free', 'store', 'shop', 'good']",['shopping'],113
+153,Shinsegae Gangnam.csv,"['store', 'food', 'depart', 'shinsega', 'floor', 'restaur', 'shop', 'bus', 'lot']",['shopping'],43
+154,Sinchon.csv,"['shop', 'place', 'restaur', 'street', 'food', 'lot', 'area', 'sinchon', 'univers']",['shopping'],144
+155,SRT.csv,"['seat', 'trip', 'hour', 'srt', 'use', 'ktx', 'train', 'busan', 'ticket']",[],159
+156,Star Avenue at Lotte World.csv,"['hand', 'star', 'lott', 'place', 'photo']",['touring'],36
+157,Starfield COEX Mall.csv,"['mall', 'shop', 'place', 'get', 'coex', 'mani']",['shopping'],100
+158,Starfield Library.csv,"['librari', 'mall', 'coex', 'book', 'read', 'peopl', 'place', 'shop']","['shopping', 'touring']",24
+159,Statue of Admiral Yi Sun-Sin.csv,"['admir', 'yi', 'sun', 'see', 'visit', 'go', 'statu', 'palac', 'squar']",['touring'],160
+160,Statue of Gangnam Style.csv,"['statu', 'coex', 'gangnam', 'mall', 'station', 'visit', 'see', 'take', 'go']",['shopping'],42
+161,Statue of Sejong the Great.csv,"['korean', 'great', 'histori', 'palac', 'statu', 'see', 'king', 'sejong']",['touring'],146
+162,Stylenanda Pink Hotel Flagship Store.csv,"['cafe', 'shop', 'makeup', 'pink', 'floor', 'visit', 'store', 'place', 'take']","['walking', 'touring']",139
+163,Sungnyemun Gate.csv,"['gate', 'seoul', 'citi', 'around', 'korea', 'beauti', 'namdaemun', 'market', 'visit']",['touring'],176
+164,Tapgol Park.csv,"['histor', 'place', 'also', 'park', 'small', 'visit', 'pagoda', 'around', 'see']",[],85
+165,The Blue House (Cheong Wa Dae).csv,"['tour', 'go', 'time', 'hous', 'blue', 'see', 'korean', 'visit', 'build']",['touring'],173
+166,The Story of King Sejong & The Story of Admiral Yi Sunshin.csv,"['korean', 'statu', 'learn', 'museum', 'admir', 'also', 'king', 'sejong', 'yi']",['touring'],53
+167,The War and Women's Human Rights Museum.csv,"['museum', 'woman', 'comfort', 'one', 'audio', 'small', 'visit', 'war', 'exhibit']",['touring'],168
+168,The War Memorial of Korea.csv,"['war', 'korea', 'korean', 'exhibit', 'museum', 'militari', 'visit', 'histori']",['touring'],5
+169,Times Square Mall.csv,"['station', 'underground', 'walk', 'mall', 'shop', 'store', 'place', 'like', 'seoul']","['shopping', 'shopping', 'walking']",133
+170,Tourist Information Center of Korea Tourism Organization.csv,"['floor', 'friend', 'staff', 'tourist', 'free', 'korean', 'hanbok', 'tri', 'experi']",['touring'],48
+171,Trickeye Museum Seoul.csv,"['museum', 'ice', 'photo', 'enjoy', 'get', 'much', 'take', 'pictur', 'fun']",['touring'],8
+172,Ttukseom Hangang Park.csv,"['summer', 'ttukseom', 'resort', 'park', 'river', 'place', 'view']",['walking'],56
+173,Unhyeongung.csv,"['tradit', 'around', 'walk', 'palac', 'visit', 'small', 'place', 'royal', 'seoul']",['touring'],58
+174,Yangjae Citizens' Park.csv,['park'],['walking'],74
+175,Yeouido Hangang Park.csv,"['park', 'nice', 'time', 'river', 'bike', 'place', 'enjoy', 'go']",['walking'],28
+176,Yeouido Park.csv,"['park', 'walk', 'nice', 'beauti', 'time', 'blossom', 'cherri', 'yeouido']",['walking'],92
+177,Yongma Land.csv,"['park', 'place', 'get', 'station', 'walk', 'taxi', 'yongma', 'land', 'lott']",['walking'],157
+178,Yongsan Family Park.csv,"['time', 'nice', 'relax', 'walk', 'enjoy', 'museum', 'park', 'great', 'place']","['walking', 'touring']",40
