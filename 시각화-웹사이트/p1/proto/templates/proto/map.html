@@ -11,13 +11,15 @@
 
 {% endblock specific-style %}
 
-{% block title %} TARS Map {% endblock title%}
+{% block header %}
+
+{% endblock header %}
 
 {% block content %}
-	<div id ="guide01" style="position: fixed;  top: 100px;  left: 50px; z-index:9">
+	<div id ="guide01" style="position: fixed;  top: 100px;  left: 50px; z-index:3">
 		<div class="w3-card w3-animate-left" style="width:350px">
-		<header class="w3-container w3-blue"> 
-        <span onclick="document.getElementById('guide01').style.display='none'" 
+		<header class="w3-container w3-blue">
+        <span onclick="document.getElementById('guide01').style.display='none'"
         class="w3-button w3-display-bottomright">close</span>
         <h2>Welcome to SEOUL!</h2>
 		<h4>the capital of South Korea<h4>
@@ -31,33 +33,35 @@
 				</li>
 				<li class="w3-bar w3-hover-blue">
 					<span class="w3-bar-item"><i class ="fas fa-file"></i>Read their Cards.</span>
-					<span class="w3-bar-item"> We summarize a lot of reviews into just one card, with TextMining Tech</span>
+					<span class="w3-bar-item"> We summarize 21,862 reviews into just one card, with TextMining Neural Network</span>
 				</li>
 				<li class="w3-bar w3-hover-blue">
 					<span class="w3-bar-item"><i class ="fas fa-check"></i>Choose the Attraction which you want to go!</span>
-				</li>				
+				</li>
 				<li class="w3-bar w3-hover-blue">
 					<span class="w3-bar-item"><i class ="fas fa-sync"></i>Then we recommend you next attractions only for you.</span>
-				</li>				
+				</li>
 			</ul>
 		  </div>
-		
+
 		</div>
 	</div>
-    <div id="map" style = "height: 800px;" class="w3-twothird"></div>    
-	<div class = "w3-third w3-left w3-padding" id="card-window">
+  <div style = "max-height: 100%; position : fixed;" class="w3-twothird w3-left">
+    <div id="map" style="height:1200px"></div>
+  </div>
+	<div class = "w3-third w3-right w3-padding" id="card-window">
+    <div style="height:50px">  </div>
 		{% for Attraction in attractions_list %}
-		
 		  <div id="{{Attraction.pk}}" class = "w3-margin-small w3-hide"></div>
-		
+
 		{% endfor %}
 
 	</div>
-	
-    <script type="text/babel">		
+
+    <script type="text/babel">
 		function makeCard(new_attraction){
 			const cardWindow = document.getElementById('card-window');
-			
+
 			var c = cardWindow.children;
 			var pk = new_attraction.pk;
 			var name = new_attraction.fields.name;
@@ -67,9 +71,9 @@
 			var latlng = {lat: new_attraction.fields.latitude ,lng:new_attraction.fields.longitude}
 			var node = document.createElement("DIV");
 			node.setAttribute('id', pk);
-			node.setAttribute('class',"w3-margin-small w3-hide");
+			node.setAttribute('class',"w3-margin w3-hide");
 			cardWindow.appendChild(node);
-			
+
 			ReactDOM.render(
 				<Card url= "{% url 'new_r' %}"
 				csrf = "{{ csrf_token }}"
@@ -83,7 +87,7 @@
 				}}/>
 				, document.getElementById(new_attraction.pk)
 			);
-		}	
+		}
 	</script>
 	<script>
 		let map;
@@ -95,35 +99,42 @@
 		let coordinates = [];
 		let selectedArray = [-1];
 		let newList = [];
+    let oldList = [2,5,77,101,168]
 
 		function rerenderMarkers(nList){
-			
+
 			for (var key in markers){
 				markers[key].setMap(null);
 			}
-			
+
 			if (path != null){
 				path.setMap(null);
 			}
-			
+
 			labelIndex = 0;
-		
-			selectedArray.forEach(function(new_pk){
+      var i = 1 ;
+			selectedArray.forEach(function(s_pk){
+				if (s_pk in markers){
+					markers[s_pk].set('label', String(i));
+					markers[s_pk].setMap(map);
+          i++
+				}
+			})
+
+      var ONList = nList.concat(oldList)
+
+			ONList.forEach(function(new_pk){
 				if (new_pk in markers){
 					markers[new_pk].set('label', labels[labelIndex % labels.length]);
 					markers[new_pk].setMap(map);
 					labelIndex++;
+          infowindows[new_pk].open(map, markers[new_pk]);
+          setTimeout(function(){
+            infowindows[new_pk].close();
+          }, 30000)
 				}
 			})
-			
-			nList.forEach(function(new_pk){
-				if (new_pk in markers){
-					markers[new_pk].set('label', labels[labelIndex % labels.length]);
-					markers[new_pk].setMap(map);
-					labelIndex++;
-				}
-			})
-			
+
 			if (coordinates.length > 1){
 				path = new google.maps.Polyline({
 				  path: coordinates,
@@ -144,12 +155,12 @@
 				setTimeout(function(){
 				x.className = x.className.replace(" w3-show", "");
 				},
-				30000);				
+				30000);
 			} else{
 				x.className = x.className.replace(" w3-show", "");
 			}
-		}	
-		
+		}
+
         function initMap() {
 			var directionsService = new google.maps.DirectionsService();
 			var directionsRenderer = new google.maps.DirectionsRenderer();
@@ -158,38 +169,37 @@
 			zoom:12
 			});
 			directionsRenderer.setMap(map);
-			
+
 			{% for Attraction in attractions_list %}
 			var label_{{ Attraction.pk }} = labelIndex++;
-						
+
 			var infowindow{{ Attraction.pk }} = new google.maps.InfoWindow({
 				content: "{{ Attraction.name }}"
             });
-			
+
 			infowindows[{{ Attraction.pk }}] = infowindow{{ Attraction.pk }};
-			
+
 			var marker{{ Attraction.pk }} = new google.maps.Marker({
 				position: {lat: {{ Attraction.latitude }}, lng: {{ Attraction.longitude }}},
 				label: labels[label_{{ Attraction.pk }} % labels.length],
 				map: map
 			});
-			
+
 			markers[{{ Attraction.pk }}] = marker{{ Attraction.pk }};
-			
+
 			marker{{ Attraction.pk }}.setMap(map);
+      infowindow{{ Attraction.pk }}.open(map, marker{{ Attraction.pk }});
+
+      setTimeout(function(){
+        infowindow{{ Attraction.pk }}.close();
+      }, 10000)
 
 			marker{{ Attraction.pk }}.addListener('click', function() {
 				marker{{ Attraction.pk }}.setAnimation(google.maps.Animation.BOUNCE);
 				setTimeout(function(){
 				marker{{ Attraction.pk }}.setAnimation(null);
 				}, 1000)
-				
-				infowindow{{ Attraction.pk }}.open(map, marker{{ Attraction.pk }});
-				
-				setTimeout(function(){
-					infowindow{{ Attraction.pk }}.close();
-				}, 10000)
-				
+
 				let pk = {{ Attraction.pk }};
 				let name = "{{Attraction.name}}";
 				hideshow(pk, true);
@@ -198,30 +208,30 @@
 		}
 
 		function placeMarker(new_attraction) {
-		
+
 			var latlng = new google.maps.LatLng(new_attraction.fields.latitude, new_attraction.fields.longitude);
-			
+
 			var marker = new google.maps.Marker({
 				position: latlng,
 				map: map
 				});
-			
+
 			markers[new_attraction.pk] = marker;
 
 			var infowindow = new google.maps.InfoWindow({
 				content: new_attraction.fields.name
-            });			
-			
+            });
+
 			infowindows[new_attraction.pk] = infowindow;
-			
+
 			marker.addListener('click', function() {
 				marker.setAnimation(google.maps.Animation.BOUNCE);
 				setTimeout(function(){
 					marker.setAnimation(null);
 				}, 1000)
-				
+
 				infowindow.open(map, marker);
-				
+
 				setTimeout(function(){
 					infowindow.close();
 				}, 10000)
@@ -244,7 +254,7 @@
 			  directionsRenderer.setDirections(result);
 			}
 			});
-		}	
+		}
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4&callback=initMap"
@@ -253,18 +263,18 @@
 	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-	
+
 	{% load static %}
 	<script src='../static/js/Card.js' type="text/babel"></script>
 	{% for Attraction in attractions_list %}
-	<script type="text/babel">		
+	<script type="text/babel">
 	var star_string{{Attraction.pk}} = "{{Attraction.star_info}}".split("&quot;").join('"');
 	var star_info{{Attraction.pk}} = JSON.parse(star_string{{Attraction.pk}});
-	
+
 	var sample_string{{Attraction.pk}} = "{{Attraction.review_sample}}".split("&quot;").join('"');
 	var review_sample{{Attraction.pk}} = JSON.parse(sample_string{{Attraction.pk}});
 	var latlng = {lat: {{Attraction.latitude}},lng:{{Attraction.longitude}}}
-	
+
 	ReactDOM.render(
 		<Card url= "{% url 'new_r' %}"
 		csrf = "{{ csrf_token }}"

@@ -12,21 +12,21 @@ class Big_Sort(models.Model):
 
 class Attraction(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    
+
     big_sort = models.ForeignKey(Big_Sort, on_delete=models.CASCADE)
     small_sort = models.CharField(max_length=30, null=True, blank=True)
-    
+
     address = models.CharField(max_length=100, null=True)
     latitude = models.FloatField(null=True)
     longitude = models.FloatField(null=True)
     cluster = models.PositiveSmallIntegerField(null = True)
-    
+
     star_info = models.CharField(max_length=100, null=True)
-    star_rating = models.DecimalField(null=True, max_digits=4, decimal_places=2)
+    star_rating = models.DecimalField(max_digits=4, decimal_places=2, default=0)
     review_sample = models.CharField(max_length=1500, null=True)
-    
+
     wordcloud = models.ImageField(blank=True, upload_to = "../static/image")
-    
+
     def __str__(self):
         return self.name
 
@@ -36,7 +36,7 @@ class Route(models.Model):
     dist = models.PositiveIntegerField(null=True, db_index = True)
     direction = models.CharField(max_length=1500, null=True)
     rating = models.DecimalField(null=True, max_digits=4, decimal_places=2)
-    
+
     def __str__(self):
         return str(self.start_pk) + " -> " + str(self.end_pk)
 
