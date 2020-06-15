@@ -104,11 +104,13 @@ left: "125%", width:"300px"}}>
 			<span className="w3-round-xxlarge w3-tag w3-margin-small w3-small" style={{backgroundColor:'#ffdb4d',
 				color:'#ff9900'}}>Most Positive</span>
 			{posSample.map((sentence, i) => {
-				return (<p> {sentence} </p>)
+        var newSentence = sentence.replace('&#x27;',"'")
+				return (<p> {newSentence} </p>)
 			})}
 			<span className="w3-round-xxlarge w3-tag w3-margin-small w3-small w3-red">Most Negative</span>
 			{negSample.map((sentence, i) => {
-				return (<p> {sentence} </p>)
+        var newSentence = sentence.replace('&#x27;',"'")
+				return (<p> {newSentence} </p>)
 			})}
 			</div>
 		</div>

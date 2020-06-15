@@ -269,22 +269,24 @@
 	{% for Attraction in attractions_list %}
 	<script type="text/babel">
 	var star_string{{Attraction.pk}} = "{{Attraction.star_info}}".split("&quot;").join('"');
-	var star_info{{Attraction.pk}} = JSON.parse(star_string{{Attraction.pk}});
+	var star_info = JSON.parse(star_string{{Attraction.pk}});
 
-	var sample_string{{Attraction.pk}} = "{{Attraction.review_sample}}".split("&quot;").join('"');
-	var review_sample{{Attraction.pk}} = JSON.parse(sample_string{{Attraction.pk}});
+	var sample_string = "{{Attraction.review_sample}}".split("&quot;").join('"');
+	var review_sample = JSON.parse(sample_string);
 	var latlng = {lat: {{Attraction.latitude}},lng:{{Attraction.longitude}}}
+
+  var name = "{{Attraction.name}}".replace('&#x27;',"'")
+  var img_src = "../static/image/{{Attraction.name}}.jpg".replace('&#x27;',"'")
 
 	ReactDOM.render(
 		<Card url= "{% url 'new_r' %}"
 		csrf = "{{ csrf_token }}"
 		attraction = {{
 		  pk: {{Attraction.pk}},
-		  name: "{{Attraction.name}}",
-		  {% load static %}
-		  img_src: "../static/image/{{Attraction.name}}.jpg",
-		  star_info: star_info{{Attraction.pk}},
-		  review_sample: review_sample{{Attraction.pk}},
+		  name: name,
+		  img_src: img_src,
+		  star_info: star_info,
+		  review_sample: review_sample,
 		  latlng:latlng
 		}}/>
 		,
