@@ -13,11 +13,11 @@
 기술적으로도 다양한 방법과 통찰을 개발하여  
 데이터 분석을 배우고, 실천하는 분들이 참고할 수 있는 좋은 선례를 만들 것.  
 
-![](https://raw.githubusercontent.com/twinstae/tripReviewAnalysisSystem/master/TRAS.png)
 
 [최종 발표 프레젠테이션](https://docs.google.com/presentation/d/1zZaL_Qc9UveKUFZhbzgaxPhs0RQlBDnm5ZF8_YXJIUI/edit?usp=sharing)
 
 
+![](https://raw.githubusercontent.com/twinstae/tripReviewAnalysisSystem/master/TRAS.png)
 
 ## 사용한 라이브러리
  - Beautiful Soup
