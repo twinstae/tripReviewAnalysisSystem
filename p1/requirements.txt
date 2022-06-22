@@ -10,7 +10,7 @@ gensim==3.8.3
 idna==2.9
 jmespath==0.10.0
 mysqlclient==1.4.6
-numpy==1.18.5
+numpy==1.22.0
 pandas==1.0.4
 Pillow==7.1.2
 python-dateutil==2.8.1
